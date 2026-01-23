@@ -34,17 +34,28 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                  isActive(link.href) ? 'text-blue-600' : 'text-slate-600'
-                }`}
-              >
-                {link.label}
-              </Link>
+              link.href === Page.Billing ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="relative px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-700 hover:shadow-lg transition-all flex items-center space-x-1"
+                >
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></span>
+                  <span>{link.label}</span>
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                    isActive(link.href) ? 'text-blue-600' : 'text-slate-600'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Link
               to={Page.Contact}
@@ -74,16 +85,27 @@ const Navbar: React.FC = () => {
         <div id="mobile-menu" className="md:hidden glass border-t border-slate-200" role="menu" aria-label="Menu mobile">
           <div className="px-4 py-6 space-y-4">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                onClick={() => setIsOpen(false)}
-                className={`block text-lg font-medium ${
-                  isActive(link.href) ? 'text-blue-600' : 'text-slate-700'
-                }`}
-              >
-                {link.label}
-              </Link>
+              link.href === Page.Billing ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-bold"
+                >
+                  {link.label} - NOUVEAU
+                </Link>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block text-lg font-medium ${
+                    isActive(link.href) ? 'text-blue-600' : 'text-slate-700'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Link
               to={Page.Contact}

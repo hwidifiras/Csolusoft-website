@@ -40,73 +40,97 @@ const Home: React.FC = () => {
         <div className="absolute bottom-0 -right-20 w-96 h-96 bg-indigo-500 opacity-5 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
       </section>
 
-      {/* FEATURED: Facturation Électronique - MUST BE VERY VISIBLE */}
+      {/* FEATURED: Facturation Électronique - INFO BANNER */}
+      <section className="py-8 bg-slate-800 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center space-x-4 text-white">
+              <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                <Zap className="w-5 h-5 text-blue-400" />
+              </div>
+              <div>
+                <p className="font-bold text-lg">Facturation électronique obligatoire en Tunisie</p>
+                <p className="text-slate-400 text-sm">Convertissez vos factures au format TEIF conforme ou adoptez notre solution complète.</p>
+              </div>
+            </div>
+            <Link to={Page.Billing} className="shrink-0 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-all flex items-center space-x-2">
+              <span>En savoir plus</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURED: Facturation Électronique - MAIN SECTION */}
       <section className="py-24 bg-slate-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-blue-600 to-indigo-900 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-br from-slate-800 to-blue-900 rounded-[3rem] p-12 lg:p-20 relative overflow-hidden shadow-2xl border border-slate-700">
             <div className="relative z-10 flex flex-col lg:flex-row items-center gap-16">
               <div className="flex-1 text-white">
-                <span className="bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-sm font-bold tracking-widest uppercase mb-6 inline-block">
-                  Service Phare 2026
+                <span className="bg-blue-500/20 border border-blue-400/30 px-4 py-2 rounded-full text-sm font-semibold text-blue-300 mb-6 inline-block">
+                  Facturation électronique
                 </span>
-                <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
-                  Facturation Électronique : <br />
-                  <span className="text-blue-200">Soyez prêt.</span>
+                <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
+                  Passez à la conformité<br />
+                  <span className="text-blue-400">en toute simplicité</span>
                 </h2>
-                <p className="text-xl text-blue-50/80 mb-10 leading-relaxed max-w-xl">
-                  Le passage à la facturation électronique est une obligation légale. Nous vous accompagnons avec une solution sécurisée, simple et 100% conforme aux nouvelles normes.
+                <p className="text-xl text-slate-300 mb-10 leading-relaxed max-w-xl">
+                  Deux solutions adaptées à vos besoins : convertissez vos factures existantes au format <strong className="text-white">TEIF</strong>, ou adoptez notre logiciel de facturation conforme.
                 </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-6 h-6 text-blue-300" />
-                    <span className="font-semibold">Conformité PDP / PPF</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+                  <div className="flex items-center space-x-3 bg-white/5 px-4 py-3 rounded-xl border border-white/10">
+                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">Module de conversion</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-6 h-6 text-blue-300" />
-                    <span className="font-semibold">Automatisation Totale</span>
+                  <div className="flex items-center space-x-3 bg-white/5 px-4 py-3 rounded-xl border border-white/10">
+                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">Export XML/TEIF conforme</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-6 h-6 text-blue-300" />
-                    <span className="font-semibold">Sécurité maximale</span>
+                  <div className="flex items-center space-x-3 bg-white/5 px-4 py-3 rounded-xl border border-white/10">
+                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">Logiciel complet</span>
                   </div>
-                  <div className="flex items-center space-x-3">
-                    <CheckCircle2 className="w-6 h-6 text-blue-300" />
-                    <span className="font-semibold">Réduction des coûts</span>
+                  <div className="flex items-center space-x-3 bg-white/5 px-4 py-3 rounded-xl border border-white/10">
+                    <CheckCircle2 className="w-5 h-5 text-green-400" />
+                    <span className="font-medium">Signature électronique</span>
                   </div>
                 </div>
-                <Link to={Page.Billing} className="inline-flex items-center space-x-3 bg-white text-blue-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-all">
-                  <span>Demander une démo</span>
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to={Page.Billing} className="inline-flex items-center justify-center space-x-3 bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-500 transition-all">
+                    <span>Découvrir nos offres</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <Link to={Page.Contact} className="inline-flex items-center justify-center space-x-3 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                    <span>Nous contacter</span>
+                  </Link>
+                </div>
               </div>
               <div className="flex-1 relative">
                 <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+                   <div className="text-center mb-6">
+                     <div className="text-5xl mb-4">📄 → 📋</div>
+                     <p className="text-slate-400 text-sm">Conversion automatique</p>
+                   </div>
                    <div className="space-y-4">
-                      <div className="h-4 w-1/3 bg-white/20 rounded-full"></div>
-                      <div className="h-20 bg-white/10 rounded-2xl border border-white/5 flex items-center px-6 justify-between">
-                         <div className="flex space-x-4">
-                            <div className="w-10 h-10 bg-blue-400 rounded-lg"></div>
-                            <div className="space-y-2">
-                               <div className="h-3 w-24 bg-white/20 rounded-full"></div>
-                               <div className="h-2 w-16 bg-white/10 rounded-full"></div>
-                            </div>
-                         </div>
-                         <div className="h-8 w-20 bg-green-400/20 rounded-full"></div>
+                      <div className="bg-slate-700/50 border border-slate-600 rounded-2xl p-4 flex items-center space-x-4">
+                        <div className="w-10 h-10 bg-slate-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">PDF</div>
+                        <div className="flex-1">
+                          <div className="text-white font-medium">facture_001.pdf</div>
+                          <div className="text-slate-400 text-xs">Format actuel</div>
+                        </div>
                       </div>
-                      <div className="h-20 bg-white/10 rounded-2xl border border-white/5 flex items-center px-6 justify-between">
-                         <div className="flex space-x-4">
-                            <div className="w-10 h-10 bg-blue-300 rounded-lg"></div>
-                            <div className="space-y-2">
-                               <div className="h-3 w-32 bg-white/20 rounded-full"></div>
-                               <div className="h-2 w-20 bg-white/10 rounded-full"></div>
-                            </div>
-                         </div>
-                         <div className="h-8 w-20 bg-blue-400/20 rounded-full"></div>
+                      <div className="text-center text-slate-500 text-2xl">↓</div>
+                      <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-4 flex items-center space-x-4">
+                        <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center text-white font-bold text-xs">XML</div>
+                        <div className="flex-1">
+                          <div className="text-white font-medium">facture_TEIF.xml</div>
+                          <div className="text-green-400 text-xs">✓ Conforme</div>
+                        </div>
                       </div>
                    </div>
                 </div>
                 {/* Background glow */}
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-400 rounded-full blur-3xl opacity-50"></div>
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl opacity-30"></div>
               </div>
             </div>
           </div>
