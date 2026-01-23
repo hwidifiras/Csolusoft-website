@@ -1,0 +1,72 @@
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Home, ArrowLeft, Search } from 'lucide-react';
+import { Page } from '../types';
+
+const NotFound: React.FC = () => {
+  return (
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center px-4">
+      <div className="max-w-2xl w-full text-center">
+        {/* 404 Illustration */}
+        <div className="relative mb-12">
+          <div className="text-[200px] md:text-[280px] font-black text-slate-100 select-none leading-none">
+            404
+          </div>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-32 h-32 bg-blue-600 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-blue-500/30 animate-bounce">
+              <Search className="w-16 h-16 text-white" />
+            </div>
+          </div>
+        </div>
+
+        {/* Content */}
+        <h1 className="text-3xl md:text-5xl font-black text-slate-900 mb-6">
+          Page introuvable
+        </h1>
+        <p className="text-lg text-slate-600 mb-10 max-w-md mx-auto leading-relaxed">
+          Oups ! La page que vous recherchez semble avoir disparu dans le cloud. 
+          Pas de panique, nous pouvons vous ramener en lieu sûr.
+        </p>
+
+        {/* Actions */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link
+            to={Page.Home}
+            className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
+          >
+            <Home className="w-5 h-5" />
+            <span>Retour à l'accueil</span>
+          </Link>
+          <button
+            onClick={() => window.history.back()}
+            className="w-full sm:w-auto px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-slate-50 transition-all"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span>Page précédente</span>
+          </button>
+        </div>
+
+        {/* Quick Links */}
+        <div className="mt-16 pt-8 border-t border-slate-200">
+          <p className="text-sm text-slate-500 mb-4">Ou consultez nos pages populaires :</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link to={Page.Billing} className="text-sm text-blue-600 hover:underline font-medium">
+              Facturation Électronique
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link to={Page.ERP} className="text-sm text-blue-600 hover:underline font-medium">
+              Solutions ERP
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link to={Page.Contact} className="text-sm text-blue-600 hover:underline font-medium">
+              Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NotFound;
