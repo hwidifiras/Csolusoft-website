@@ -24,6 +24,7 @@ import {
   ScrollText
 } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 
 const BillingGuide: React.FC = () => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(0);
@@ -162,8 +163,14 @@ const BillingGuide: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
+    <div className="bg-white dark:bg-dark-900 transition-colors">
+      <SEO 
+        title="Guide Facturation Électronique"
+        description="Guide complet sur la facturation électronique en Tunisie. Loi de finances 2026, obligations légales, sanctions et solutions de mise en conformité."
+        keywords="guide facturation électronique, loi finances 2026, TEIF, obligations, sanctions, Tunisie"
+        url="/guide-facturation-electronique"
+      />
+      {/* Hero Section */}}
       <section className="relative pt-24 pb-20 bg-gradient-to-br from-primary-800 via-primary-700 to-primary-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
         
@@ -210,45 +217,45 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center space-x-4 mb-8">
               <div className="w-12 h-12 bg-primary-500 rounded-xl flex items-center justify-center">
                 <Scale className="w-6 h-6 text-white" />
               </div>
-              <h2 className="text-3xl font-bold text-slate-900">Contexte Réglementaire</h2>
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white">Contexte Réglementaire</h2>
             </div>
             
-            <div className="prose prose-lg max-w-none text-slate-600">
+            <div className="prose prose-lg max-w-none text-slate-600 dark:text-slate-400">
               <p className="text-xl leading-relaxed mb-6">
-                Dans le cadre de la <strong className="text-slate-900">modernisation du système fiscal tunisien</strong> et de la lutte contre la fraude, le gouvernement a mis en place une obligation progressive de facturation électronique pour toutes les entreprises.
+                Dans le cadre de la <strong className="text-slate-900 dark:text-white">modernisation du système fiscal tunisien</strong> et de la lutte contre la fraude, le gouvernement a mis en place une obligation progressive de facturation électronique pour toutes les entreprises.
               </p>
               <p className="leading-relaxed mb-6">
-                Cette réforme s'inscrit dans une dynamique internationale où de nombreux pays adoptent des systèmes similaires. L'objectif est triple : améliorer la <strong className="text-slate-900">traçabilité des transactions</strong>, réduire l'économie informelle et simplifier les contrôles fiscaux.
+                Cette réforme s'inscrit dans une dynamique internationale où de nombreux pays adoptent des systèmes similaires. L'objectif est triple : améliorer la <strong className="text-slate-900 dark:text-white">traçabilité des transactions</strong>, réduire l'économie informelle et simplifier les contrôles fiscaux.
               </p>
               <p className="leading-relaxed">
-                Le format adopté par la Tunisie est le <strong className="text-slate-900">TEIF (Tunisian Electronic Invoice Format)</strong>, un standard XML qui garantit l'interopérabilité et la conformité de toutes les factures émises sur le territoire.
+                Le format adopté par la Tunisie est le <strong className="text-slate-900 dark:text-white">TEIF (Tunisian Electronic Invoice Format)</strong>, un standard XML qui garantit l'interopérabilité et la conformité de toutes les factures émises sur le territoire.
               </p>
             </div>
 
             {/* Key stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center">
-                <div className="text-3xl font-black text-primary-500 mb-2">2024</div>
-                <p className="text-sm text-slate-600">Entrée en vigueur</p>
+              <div className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-slate-200 dark:border-slate-600 text-center">
+                <div className="text-3xl font-black text-primary-500 dark:text-accent-400 mb-2">2024</div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Entrée en vigueur</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center">
-                <div className="text-3xl font-black text-primary-500 mb-2">100%</div>
-                <p className="text-sm text-slate-600">Entreprises concernées d'ici 2027</p>
+              <div className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-slate-200 dark:border-slate-600 text-center">
+                <div className="text-3xl font-black text-primary-500 dark:text-accent-400 mb-2">100%</div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Entreprises concernées d'ici 2027</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center">
-                <div className="text-3xl font-black text-primary-500 mb-2">XML</div>
-                <p className="text-sm text-slate-600">Format standard TEIF</p>
+              <div className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-slate-200 dark:border-slate-600 text-center">
+                <div className="text-3xl font-black text-primary-500 dark:text-accent-400 mb-2">XML</div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Format standard TEIF</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 text-center">
-                <div className="text-3xl font-black text-primary-500 mb-2">10 ans</div>
-                <p className="text-sm text-slate-600">Durée d'archivage</p>
+              <div className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-slate-200 dark:border-slate-600 text-center">
+                <div className="text-3xl font-black text-primary-500 dark:text-accent-400 mb-2">10 ans</div>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Durée d'archivage</p>
               </div>
             </div>
           </div>
@@ -256,16 +263,16 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* Timeline Section */}
-      <section id="timeline" className="py-20 bg-white">
+      <section id="timeline" className="py-20 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-primary-50 text-primary-600 text-sm font-bold px-4 py-2 rounded-full mb-4">
+            <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-sm font-bold px-4 py-2 rounded-full mb-4">
               CALENDRIER D'APPLICATION
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
               Quand êtes-vous concerné ?
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               L'obligation de facturation électronique s'applique progressivement selon la taille et le secteur d'activité de votre entreprise.
             </p>
           </div>
@@ -273,23 +280,23 @@ const BillingGuide: React.FC = () => {
           <div className="max-w-4xl mx-auto">
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200 md:left-1/2 md:-translate-x-0.5"></div>
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-slate-200 dark:bg-slate-700 md:left-1/2 md:-translate-x-0.5"></div>
               
               {timeline.map((item, idx) => (
                 <div key={idx} className={`relative flex items-start mb-12 ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                   {/* Content */}
                   <div className={`ml-20 md:ml-0 md:w-1/2 ${idx % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                    <div className={`bg-white p-6 rounded-2xl border ${item.status === 'active' ? 'border-primary-200 shadow-lg shadow-primary-50' : 'border-slate-200'}`}>
+                    <div className={`bg-white dark:bg-dark-700 p-6 rounded-2xl border ${item.status === 'active' ? 'border-primary-200 dark:border-primary-500/30 shadow-lg shadow-primary-50 dark:shadow-primary-500/10' : 'border-slate-200 dark:border-slate-600'}`}>
                       <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-bold mb-3 ${
-                        item.status === 'active' ? 'bg-primary-50 text-primary-600' : 
-                        item.status === 'upcoming' ? 'bg-amber-100 text-amber-700' : 
-                        'bg-slate-100 text-slate-600'
+                        item.status === 'active' ? 'bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300' : 
+                        item.status === 'upcoming' ? 'bg-amber-100 dark:bg-amber-500/20 text-amber-700 dark:text-amber-400' : 
+                        'bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-300'
                       }`}>
                         {item.status === 'active' && <span className="w-2 h-2 bg-primary-500 rounded-full animate-pulse"></span>}
                         <span>{item.year}</span>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                      <p className="text-slate-600">{item.description}</p>
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                      <p className="text-slate-600 dark:text-slate-400">{item.description}</p>
                     </div>
                   </div>
                   
@@ -389,34 +396,34 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* Penalties Section */}
-      <section className="py-20 bg-red-50">
+      <section className="py-20 bg-red-50 dark:bg-red-950/30 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-2xl mb-6">
-              <AlertTriangle className="w-8 h-8 text-red-600" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-500/20 rounded-2xl mb-6">
+              <AlertTriangle className="w-8 h-8 text-red-600 dark:text-red-400" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
               Risques en cas de non-conformité
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               Le non-respect de l'obligation de facturation électronique expose votre entreprise à des sanctions financières significatives.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {penalties.map((penalty, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-red-100 shadow-sm">
+              <div key={idx} className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-red-100 dark:border-red-500/20 shadow-sm">
                 <div className="flex items-center space-x-2 mb-4">
-                  <FileWarning className="w-5 h-5 text-red-500" />
-                  <span className="text-base font-bold text-red-600">{penalty.amount}</span>
+                  <FileWarning className="w-5 h-5 text-red-500 dark:text-red-400" />
+                  <span className="text-base font-bold text-red-600 dark:text-red-400">{penalty.amount}</span>
                 </div>
-                <p className="text-slate-600 text-sm">{penalty.description}</p>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">{penalty.description}</p>
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <p className="text-slate-700 font-medium mb-6">
+            <p className="text-slate-700 dark:text-slate-300 font-medium mb-6">
               Ne prenez pas de risques. Mettez-vous en conformité dès maintenant.
             </p>
             <Link 
@@ -431,27 +438,27 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-green-100 text-green-700 text-sm font-bold px-4 py-2 rounded-full mb-4">
+            <span className="inline-block bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-400 text-sm font-bold px-4 py-2 rounded-full mb-4">
               AVANTAGES
             </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
               La facturation électronique, c'est aussi des bénéfices
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
               Au-delà de la conformité, la facturation électronique apporte des avantages concrets à votre entreprise.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="text-center p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all group">
-                <div className="text-4xl font-black text-primary-500 mb-2 group-hover:scale-110 transition-transform">{benefit.stat}</div>
-                <p className="text-sm text-slate-500 mb-6">{benefit.statLabel}</p>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                <p className="text-slate-600 text-sm">{benefit.description}</p>
+              <div key={idx} className="text-center p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-xl dark:hover:shadow-dark-700/50 transition-all group bg-white dark:bg-dark-800">
+                <div className="text-4xl font-black text-primary-500 dark:text-accent-400 mb-2 group-hover:scale-110 transition-transform">{benefit.stat}</div>
+                <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">{benefit.statLabel}</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{benefit.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -459,33 +466,33 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 rounded-2xl mb-6">
-              <HelpCircle className="w-8 h-8 text-primary-500" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-50 dark:bg-primary-500/20 rounded-2xl mb-6">
+              <HelpCircle className="w-8 h-8 text-primary-500 dark:text-primary-400" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
               Questions Fréquentes
             </h2>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-slate-600 dark:text-slate-400">
               Tout ce que vous devez savoir sur la facturation électronique en Tunisie.
             </p>
           </div>
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <div key={idx} className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+              <div key={idx} className="bg-white dark:bg-dark-700 rounded-2xl border border-slate-200 dark:border-slate-600 overflow-hidden">
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 dark:hover:bg-dark-600 transition-colors"
                 >
-                  <span className="font-bold text-slate-900 pr-8">{faq.question}</span>
-                  <ChevronDown className={`w-5 h-5 text-slate-500 shrink-0 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`} />
+                  <span className="font-bold text-slate-900 dark:text-white pr-8">{faq.question}</span>
+                  <ChevronDown className={`w-5 h-5 text-slate-500 dark:text-slate-400 shrink-0 transition-transform ${openFaq === idx ? 'rotate-180' : ''}`} />
                 </button>
                 {openFaq === idx && (
                   <div className="px-6 pb-6">
-                    <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
               </div>

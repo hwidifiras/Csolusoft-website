@@ -17,6 +17,7 @@ import {
   Link2
 } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 import { 
   getPostBySlug, 
   getRelatedPosts, 
@@ -45,10 +46,10 @@ const BlogPost: React.FC = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 dark:bg-dark-900 flex items-center justify-center transition-colors">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Article non trouvé</h1>
-          <p className="text-slate-600 mb-8">L'article que vous recherchez n'existe pas ou a été déplacé.</p>
+          <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4">Article non trouvé</h1>
+          <p className="text-slate-600 dark:text-slate-400 mb-8">L'article que vous recherchez n'existe pas ou a été déplacé.</p>
           <Link
             to="/blog"
             className="inline-flex items-center space-x-2 bg-accent-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-accent-600 transition-all"
@@ -84,7 +85,7 @@ const BlogPost: React.FC = () => {
     const flushList = () => {
       if (listItems.length > 0) {
         elements.push(
-          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 my-4 text-slate-600">
+          <ul key={`list-${elements.length}`} className="list-disc list-inside space-y-2 my-4 text-slate-600 dark:text-slate-400">
             {listItems.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -99,11 +100,11 @@ const BlogPost: React.FC = () => {
       if (tableRows.length > 0) {
         elements.push(
           <div key={`table-${elements.length}`} className="overflow-x-auto my-6">
-            <table className="w-full border-collapse bg-white rounded-xl overflow-hidden shadow-sm">
+            <table className="w-full border-collapse bg-white dark:bg-dark-700 rounded-xl overflow-hidden shadow-sm">
               <thead>
-                <tr className="bg-slate-100">
+                <tr className="bg-slate-100 dark:bg-dark-600">
                   {tableRows[0].map((cell, i) => (
-                    <th key={i} className="px-4 py-3 text-left text-sm font-bold text-slate-900 border-b border-slate-200">
+                    <th key={i} className="px-4 py-3 text-left text-sm font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-600">
                       {cell}
                     </th>
                   ))}
@@ -111,9 +112,9 @@ const BlogPost: React.FC = () => {
               </thead>
               <tbody>
                 {tableRows.slice(2).map((row, rowIdx) => (
-                  <tr key={rowIdx} className="border-b border-slate-100 last:border-0">
+                  <tr key={rowIdx} className="border-b border-slate-100 dark:border-slate-600 last:border-0">
                     {row.map((cell, cellIdx) => (
-                      <td key={cellIdx} className="px-4 py-3 text-sm text-slate-600">
+                      <td key={cellIdx} className="px-4 py-3 text-sm text-slate-600 dark:text-slate-400">
                         {cell}
                       </td>
                     ))}
@@ -150,7 +151,7 @@ const BlogPost: React.FC = () => {
       if (trimmedLine.startsWith('## ')) {
         flushList();
         elements.push(
-          <h2 key={idx} className="text-2xl font-bold text-slate-900 mt-10 mb-4">
+          <h2 key={idx} className="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4">
             {trimmedLine.replace('## ', '')}
           </h2>
         );
@@ -160,7 +161,7 @@ const BlogPost: React.FC = () => {
       if (trimmedLine.startsWith('### ')) {
         flushList();
         elements.push(
-          <h3 key={idx} className="text-xl font-bold text-slate-900 mt-8 mb-3">
+          <h3 key={idx} className="text-xl font-bold text-slate-900 dark:text-white mt-8 mb-3">
             {trimmedLine.replace('### ', '')}
           </h3>
         );
@@ -170,7 +171,7 @@ const BlogPost: React.FC = () => {
       if (trimmedLine.startsWith('#### ')) {
         flushList();
         elements.push(
-          <h4 key={idx} className="text-lg font-bold text-slate-900 mt-6 mb-2">
+          <h4 key={idx} className="text-lg font-bold text-slate-900 dark:text-white mt-6 mb-2">
             {trimmedLine.replace('#### ', '')}
           </h4>
         );
@@ -181,8 +182,8 @@ const BlogPost: React.FC = () => {
       if (trimmedLine.startsWith('> ')) {
         flushList();
         elements.push(
-          <blockquote key={idx} className="border-l-4 border-primary-400 bg-primary-50 px-6 py-4 my-6 rounded-r-xl">
-            <p className="text-primary-800 font-medium italic">
+          <blockquote key={idx} className="border-l-4 border-primary-400 bg-primary-50 dark:bg-primary-500/10 px-6 py-4 my-6 rounded-r-xl">
+            <p className="text-primary-800 dark:text-primary-300 font-medium italic">
               {trimmedLine.replace('> ', '').replace(/\*\*/g, '')}
             </p>
           </blockquote>
@@ -204,13 +205,13 @@ const BlogPost: React.FC = () => {
         // Handle bold text
         const processedText = trimmedLine.split(/(\*\*[^*]+\*\*)/).map((part, i) => {
           if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={i} className="font-semibold text-slate-900">{part.slice(2, -2)}</strong>;
+            return <strong key={i} className="font-semibold text-slate-900 dark:text-white">{part.slice(2, -2)}</strong>;
           }
           return part;
         });
 
         elements.push(
-          <p key={idx} className="text-slate-600 leading-relaxed my-4">
+          <p key={idx} className="text-slate-600 dark:text-slate-400 leading-relaxed my-4">
             {processedText}
           </p>
         );
@@ -224,7 +225,17 @@ const BlogPost: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors">
+      <SEO 
+        title={post.title}
+        description={post.excerpt}
+        keywords={post.tags.join(', ')}
+        url={`/blog/${post.slug}`}
+        type="article"
+        publishedTime={post.publishedAt}
+        author={post.author}
+        image={post.image}
+      />
       {/* Hero / Header */}
       <section className="relative pt-24 pb-16 bg-gradient-to-br from-dark-900 via-primary-800 to-primary-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
@@ -292,18 +303,18 @@ const BlogPost: React.FC = () => {
       </section>
 
       {/* Content */}
-      <section className="py-16">
+      <section className="py-16 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Sidebar - Share */}
             <aside className="lg:col-span-1 order-2 lg:order-1">
               <div className="lg:sticky lg:top-32 flex lg:flex-col items-center gap-4">
-                <span className="text-xs text-slate-400 font-medium hidden lg:block">Partager</span>
+                <span className="text-xs text-slate-400 dark:text-slate-500 font-medium hidden lg:block">Partager</span>
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-primary-500 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 dark:bg-dark-700 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary-500 hover:text-white transition-all"
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
@@ -311,7 +322,7 @@ const BlogPost: React.FC = () => {
                   href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-sky-500 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 dark:bg-dark-700 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-sky-500 hover:text-white transition-all"
                 >
                   <Twitter className="w-4 h-4" />
                 </a>
@@ -319,13 +330,13 @@ const BlogPost: React.FC = () => {
                   href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-primary-600 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 dark:bg-dark-700 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary-600 hover:text-white transition-all"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <button
                   onClick={() => navigator.clipboard.writeText(shareUrl)}
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-dark-900 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 dark:bg-dark-700 rounded-full flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-dark-900 dark:hover:bg-slate-600 hover:text-white transition-all"
                   title="Copier le lien"
                 >
                   <Link2 className="w-4 h-4" />
@@ -340,16 +351,16 @@ const BlogPost: React.FC = () => {
               </div>
 
               {/* Tags */}
-              <div className="mt-12 pt-8 border-t border-slate-200">
+              <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
                 <div className="flex items-center space-x-2 mb-4">
-                  <Tag className="w-4 h-4 text-slate-400" />
-                  <span className="text-sm font-medium text-slate-600">Tags :</span>
+                  <Tag className="w-4 h-4 text-slate-400 dark:text-slate-500" />
+                  <span className="text-sm font-medium text-slate-600 dark:text-slate-400">Tags :</span>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-4 py-2 bg-slate-100 text-slate-600 rounded-full text-sm font-medium hover:bg-slate-200 transition-colors cursor-pointer"
+                      className="px-4 py-2 bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-300 rounded-full text-sm font-medium hover:bg-slate-200 dark:hover:bg-dark-600 transition-colors cursor-pointer"
                     >
                       {tag}
                     </span>
@@ -386,15 +397,15 @@ const BlogPost: React.FC = () => {
 
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 bg-slate-50 dark:bg-dark-800 transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl font-bold text-slate-900 mb-8">Articles similaires</h2>
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Articles similaires</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((relatedPost) => (
                 <Link
                   key={relatedPost.id}
                   to={`/blog/${relatedPost.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-primary-100 transition-all"
+                  className="group bg-white dark:bg-dark-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-xl hover:border-primary-100 dark:hover:border-primary-500/30 transition-all"
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -407,10 +418,10 @@ const BlogPost: React.FC = () => {
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${BLOG_CATEGORIES[relatedPost.category].color}`}>
                       {BLOG_CATEGORIES[relatedPost.category].label}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary-500 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors line-clamp-2">
                       {relatedPost.title}
                     </h3>
-                    <p className="text-slate-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm line-clamp-2">{relatedPost.excerpt}</p>
                   </div>
                 </Link>
               ))}
@@ -420,11 +431,11 @@ const BlogPost: React.FC = () => {
       )}
 
       {/* Back to Blog */}
-      <section className="py-8 bg-white border-t border-slate-200">
+      <section className="py-8 bg-white dark:bg-dark-900 border-t border-slate-200 dark:border-slate-700 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/blog"
-            className="inline-flex items-center space-x-2 text-primary-500 font-semibold hover:text-primary-600 transition-colors"
+            className="inline-flex items-center space-x-2 text-primary-500 dark:text-accent-400 font-semibold hover:text-primary-600 dark:hover:text-accent-300 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retour au blog</span>

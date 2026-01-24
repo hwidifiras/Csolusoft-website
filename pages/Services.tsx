@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SERVICE_LIST } from '../constants';
 import { ArrowRight, CheckCircle2, Rocket, HeadphonesIcon, Shield, Clock } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
   const processSteps = [
@@ -21,20 +22,26 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors">
+      <SEO 
+        title="Nos Services"
+        description="Découvrez nos services de transformation digitale : applications web, mobiles, logiciels desktop, cloud et APIs. Expertise technique et support 24/7."
+        keywords="services informatiques, développement web, application mobile, logiciel desktop, cloud, API, Tunisie"
+        url="/services"
+      />
       {/* Hero */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block bg-primary-50 text-primary-600 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
             Expertise Technique
           </span>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">Nos Services Digitaux</h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6">Nos Services Digitaux</h1>
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-10">
             De la conception à la maintenance, nous vous accompagnons sur l'ensemble de votre cycle de vie technologique.
           </p>
           <Link 
             to={Page.Contact}
-            className="inline-flex items-center space-x-2 bg-accent-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-accent-600 transition-all shadow-lg shadow-accent-200"
+            className="inline-flex items-center space-x-2 bg-accent-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-accent-600 transition-all shadow-lg shadow-accent-200 dark:shadow-accent-500/20"
           >
             <span>Discuter de votre projet</span>
             <ArrowRight className="w-5 h-5" />
@@ -43,23 +50,23 @@ const Services: React.FC = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SERVICE_LIST.map((service, i) => (
-              <div key={i} className="group p-10 rounded-[2.5rem] border border-slate-100 bg-white hover:shadow-2xl transition-all flex flex-col items-start">
-                <div className="w-16 h-16 bg-primary-50 text-primary-500 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-500 group-hover:text-white transition-all">
+              <div key={i} className="group p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-700 bg-white dark:bg-dark-800 hover:shadow-2xl transition-all flex flex-col items-start">
+                <div className="w-16 h-16 bg-primary-50 dark:bg-primary-500/20 text-primary-500 dark:text-primary-400 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-500 group-hover:text-white transition-all">
                    {service.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-8">{service.description}</p>
+                <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">{service.title}</h3>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{service.description}</p>
                 <div className="mt-auto w-full flex flex-wrap items-center justify-between gap-4">
                    <div className="flex flex-wrap gap-2">
-                     <span className="text-xs font-bold text-slate-400 px-3 py-1 bg-slate-50 rounded-full border border-slate-100">Performance</span>
-                     <span className="text-xs font-bold text-slate-400 px-3 py-1 bg-slate-50 rounded-full border border-slate-100">Sécurité</span>
-                     <span className="text-xs font-bold text-slate-400 px-3 py-1 bg-slate-50 rounded-full border border-slate-100">Scalable</span>
+                     <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 py-1 bg-slate-50 dark:bg-dark-700 rounded-full border border-slate-100 dark:border-slate-600">Performance</span>
+                     <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 py-1 bg-slate-50 dark:bg-dark-700 rounded-full border border-slate-100 dark:border-slate-600">Sécurité</span>
+                     <span className="text-xs font-bold text-slate-400 dark:text-slate-500 px-3 py-1 bg-slate-50 dark:bg-dark-700 rounded-full border border-slate-100 dark:border-slate-600">Scalable</span>
                    </div>
-                   <Link to={service.pageLink} className="text-primary-500 font-bold text-sm flex items-center hover:text-primary-600">
+                   <Link to={service.pageLink} className="text-primary-500 dark:text-accent-400 font-bold text-sm flex items-center hover:text-primary-600 dark:hover:text-accent-300">
                      En savoir plus
                      <ArrowRight className="w-4 h-4 ml-1" />
                    </Link>
@@ -95,22 +102,22 @@ const Services: React.FC = () => {
       </section>
 
       {/* Guarantees */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Nos Garanties</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Nos Garanties</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Des engagements concrets pour une collaboration sereine.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {guarantees.map((item, i) => (
               <div key={i} className="text-center p-8">
-                <div className="w-14 h-14 bg-primary-50 text-primary-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-14 h-14 bg-primary-50 dark:bg-primary-500/20 text-primary-500 dark:text-primary-400 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   {item.icon}
                 </div>
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.description}</p>
+                <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">{item.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>

@@ -1,139 +1,542 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code2, Workflow, Lightbulb, Settings2, ShieldCheck, HeartHandshake } from 'lucide-react';
+import { 
+  Code2, Workflow, Lightbulb, Settings2, ShieldCheck, HeartHandshake,
+  MessageSquare, FileSearch, Palette, Layers, TestTube, Rocket, 
+  LifeBuoy, ArrowRight, CheckCircle2, Clock, Users, Zap, Target,
+  GitBranch, Database, Globe, Smartphone, Monitor, Server
+} from 'lucide-react';
+import { Page } from '../types';
+import SEO from '../components/SEO';
 
 const DevSurMesure: React.FC = () => {
-  const steps = [
+  // Detailed project phases for case study
+  const projectPhases = [
     {
-      title: "Étude & Analyse",
-      desc: "Compréhension profonde de votre métier et de vos points de friction.",
-      icon: <Lightbulb className="w-6 h-6" />
+      phase: "Phase 1",
+      title: "Découverte & Cadrage",
+      duration: "1-2 semaines",
+      icon: <MessageSquare className="w-6 h-6" />,
+      color: "bg-blue-500",
+      description: "Nous commençons par comprendre en profondeur votre métier, vos défis et vos objectifs.",
+      activities: [
+        "Réunion de lancement avec vos équipes clés",
+        "Analyse de vos processus métier actuels",
+        "Identification des points de friction",
+        "Définition des objectifs mesurables",
+        "Étude de votre environnement technique existant"
+      ],
+      deliverables: ["Compte-rendu de cadrage", "Liste des besoins prioritaires", "Planning prévisionnel"]
     },
     {
-      title: "Développement",
-      desc: "Codage agile avec des technologies modernes et robustes.",
-      icon: <Code2 className="w-6 h-6" />
+      phase: "Phase 2",
+      title: "Analyse & Spécifications",
+      duration: "2-3 semaines",
+      icon: <FileSearch className="w-6 h-6" />,
+      color: "bg-purple-500",
+      description: "Nous traduisons vos besoins en spécifications techniques détaillées.",
+      activities: [
+        "Rédaction des user stories détaillées",
+        "Modélisation des flux de données",
+        "Définition de l'architecture technique",
+        "Choix des technologies adaptées",
+        "Estimation des coûts et délais"
+      ],
+      deliverables: ["Cahier des charges fonctionnel", "Architecture technique", "Devis détaillé"]
     },
     {
-      title: "Maintenance & Évolution",
-      desc: "Support continu et mises à jour régulières pour pérenniser vos outils.",
-      icon: <Settings2 className="w-6 h-6" />
+      phase: "Phase 3",
+      title: "Design UX/UI",
+      duration: "1-2 semaines",
+      icon: <Palette className="w-6 h-6" />,
+      color: "bg-pink-500",
+      description: "Nous concevons des interfaces intuitives et esthétiques adaptées à vos utilisateurs.",
+      activities: [
+        "Création des wireframes (maquettes fil de fer)",
+        "Design de l'interface utilisateur complète",
+        "Prototypage interactif cliquable",
+        "Tests d'ergonomie préliminaires",
+        "Validation du design avec vos équipes"
+      ],
+      deliverables: ["Maquettes Figma/Adobe XD", "Prototype interactif", "Guide de style"]
+    },
+    {
+      phase: "Phase 4",
+      title: "Développement Agile",
+      duration: "4-12 semaines",
+      icon: <Code2 className="w-6 h-6" />,
+      color: "bg-green-500",
+      description: "Nous développons votre solution par itérations avec des démonstrations régulières.",
+      activities: [
+        "Sprints de développement de 2 semaines",
+        "Démonstrations bi-hebdomadaires",
+        "Intégration continue et tests automatisés",
+        "Revues de code systématiques",
+        "Feedback et ajustements en temps réel"
+      ],
+      deliverables: ["Versions intermédiaires fonctionnelles", "Rapports de sprint", "Documentation technique"]
+    },
+    {
+      phase: "Phase 5",
+      title: "Tests & Qualité",
+      duration: "1-2 semaines",
+      icon: <TestTube className="w-6 h-6" />,
+      color: "bg-orange-500",
+      description: "Nous vérifions rigoureusement que tout fonctionne parfaitement avant la mise en production.",
+      activities: [
+        "Tests fonctionnels complets",
+        "Tests de performance et charge",
+        "Tests de sécurité (OWASP)",
+        "Tests sur différents appareils/navigateurs",
+        "Correction des bugs identifiés"
+      ],
+      deliverables: ["Rapport de tests", "Certificat de conformité", "Version candidate finale"]
+    },
+    {
+      phase: "Phase 6",
+      title: "Déploiement & Lancement",
+      duration: "1 semaine",
+      icon: <Rocket className="w-6 h-6" />,
+      color: "bg-red-500",
+      description: "Nous mettons votre solution en production et formons vos équipes.",
+      activities: [
+        "Configuration des serveurs de production",
+        "Migration des données existantes",
+        "Formation des utilisateurs finaux",
+        "Documentation utilisateur",
+        "Surveillance post-déploiement"
+      ],
+      deliverables: ["Application en production", "Guides utilisateurs", "Accès administrateur"]
+    },
+    {
+      phase: "Phase 7",
+      title: "Support & Évolution",
+      duration: "Continu",
+      icon: <LifeBuoy className="w-6 h-6" />,
+      color: "bg-teal-500",
+      description: "Nous restons à vos côtés pour maintenir et faire évoluer votre solution.",
+      activities: [
+        "Support technique réactif",
+        "Maintenance corrective et préventive",
+        "Mises à jour de sécurité",
+        "Développement de nouvelles fonctionnalités",
+        "Optimisations continues"
+      ],
+      deliverables: ["Contrat de maintenance", "SLA garanti", "Roadmap évolutive"]
+    }
+  ];
+
+  const techStack = [
+    { category: "Frontend", techs: ["React", "Vue.js", "Angular", "TypeScript", "Tailwind CSS"] },
+    { category: "Mobile", techs: ["React Native", "Flutter", "Swift", "Kotlin"] },
+    { category: "Backend", techs: ["Node.js", "Python", "Java", ".NET", "PHP"] },
+    { category: "Base de données", techs: ["PostgreSQL", "MongoDB", "MySQL", "Redis"] },
+    { category: "Cloud", techs: ["AWS", "Azure", "Google Cloud", "DigitalOcean"] },
+    { category: "DevOps", techs: ["Docker", "Kubernetes", "CI/CD", "GitHub Actions"] }
+  ];
+
+  const projectTypes = [
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Applications Web",
+      description: "Plateformes SaaS, portails clients, applications métier complexes accessibles depuis n'importe quel navigateur.",
+      examples: ["ERP sur mesure", "Portail client B2B", "Plateforme e-commerce", "Dashboard analytics"],
+      gradient: "from-blue-500 to-primary-500"
+    },
+    {
+      icon: <Smartphone className="w-8 h-8" />,
+      title: "Applications Mobiles",
+      description: "Applications iOS et Android natives ou hybrides pour accompagner vos équipes et clients en mobilité.",
+      examples: ["App de gestion terrain", "Application client", "App de livraison", "Scanner inventaire"],
+      gradient: "from-pink-500 to-purple-500"
+    },
+    {
+      icon: <Monitor className="w-8 h-8" />,
+      title: "Logiciels Desktop",
+      description: "Logiciels installables Windows, Mac et Linux pour une utilisation intensive et hors-ligne.",
+      examples: ["Logiciel de caisse", "Outil de production", "Application comptable", "Gestion d'atelier"],
+      gradient: "from-slate-600 to-slate-800"
+    },
+    {
+      icon: <Server className="w-8 h-8" />,
+      title: "APIs & Intégrations",
+      description: "Connectez vos systèmes existants et automatisez vos flux de données entre applications.",
+      examples: ["API REST/GraphQL", "Connecteurs ERP", "Webhooks", "Synchronisation cloud"],
+      gradient: "from-green-500 to-teal-500"
     }
   ];
 
   return (
-    <div className="bg-white">
-      <section className="py-24 bg-primary-500 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-6xl font-black mb-8">Développement <span className="text-primary-100">Sur Mesure.</span></h1>
-          <p className="text-xl text-primary-50 max-w-3xl mx-auto leading-relaxed">
-            Parce que votre entreprise est unique, vos logiciels doivent l'être aussi. Nous créons des solutions taillées pour vos besoins spécifiques.
-          </p>
+    <div className="bg-white dark:bg-dark-900 transition-colors">
+      <SEO 
+        title="Développement Sur Mesure"
+        description="Développement de logiciels sur mesure en Tunisie. Applications web, mobiles et desktop taillées pour vos besoins spécifiques. De l'analyse à la maintenance."
+        keywords="développement sur mesure, application web, application mobile, logiciel desktop, Tunisie, développeur"
+        url="/developpement"
+      />
+
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-primary-600 via-primary-500 to-accent-500 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50"></div>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-8">
+              <Code2 className="w-4 h-4" />
+              <span>Solutions logicielles personnalisées</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
+              Développement<br />
+              <span className="text-primary-100">Sur Mesure.</span>
+            </h1>
+            
+            <p className="text-xl text-primary-50 max-w-3xl mx-auto mb-10 leading-relaxed">
+              Parce que votre entreprise est unique, vos logiciels doivent l'être aussi. 
+              Nous créons des solutions <strong className="text-white">taillées pour vos besoins spécifiques</strong>, 
+              de l'idée initiale jusqu'à la maintenance continue.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link to={Page.Contact} className="px-8 py-4 bg-white text-primary-600 rounded-2xl font-bold hover:bg-primary-50 transition-all shadow-lg flex items-center justify-center space-x-2">
+                <span>Discuter de mon projet</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="#process" className="px-8 py-4 bg-white/10 backdrop-blur text-white border border-white/30 rounded-2xl font-bold hover:bg-white/20 transition-all">
+                Voir le processus
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-24">
+      {/* Value Props */}
+      <section className="py-16 bg-white dark:bg-dark-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24">
-            {steps.map((step, i) => (
-              <div key={i} className="text-center group">
-                <div className="w-20 h-20 bg-primary-50 text-primary-500 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all">
-                  {step.icon}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              { icon: <Target className="w-6 h-6" />, title: "100% sur mesure", desc: "Adapté à VOS processus" },
+              { icon: <Clock className="w-6 h-6" />, title: "Livraisons rapides", desc: "Sprints de 2 semaines" },
+              { icon: <Users className="w-6 h-6" />, title: "Équipe dédiée", desc: "Interlocuteur unique" },
+              { icon: <Zap className="w-6 h-6" />, title: "Technologies modernes", desc: "Stack performant" },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center space-x-4 p-4">
+                <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center text-primary-500 dark:text-primary-400">
+                  {item.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
-                <p className="text-slate-600">{step.desc}</p>
+                <div>
+                  <h3 className="font-bold text-slate-900 dark:text-white">{item.title}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="bg-slate-50 rounded-[3rem] p-12 lg:p-20">
-             <div className="flex flex-col lg:flex-row items-center gap-16">
-                <div className="lg:w-1/2">
-                   <h2 className="text-4xl font-extrabold mb-8 text-slate-900">Une méthodologie axée sur le résultat.</h2>
-                   <div className="space-y-8">
-                      <div className="flex items-start space-x-4">
-                         <div className="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-sm shrink-0">A</div>
-                         <div>
-                            <p className="font-bold text-slate-900 mb-1">Approche Agile</p>
-                            <p className="text-slate-600 text-sm">Livraisons fréquentes et feedback continu pour un produit final parfait.</p>
-                         </div>
-                      </div>
-                      <div className="flex items-start space-x-4">
-                         <div className="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-sm shrink-0">S</div>
-                         <div>
-                            <p className="font-bold text-slate-900 mb-1">Scalabilité Native</p>
-                            <p className="text-slate-600 text-sm">Des architectures conçues pour supporter des millions d'utilisateurs sans faillir.</p>
-                         </div>
-                      </div>
-                      <div className="flex items-start space-x-4">
-                         <div className="w-8 h-8 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-sm shrink-0">Q</div>
-                         <div>
-                            <p className="font-bold text-slate-900 mb-1">Qualité de Code</p>
-                            <p className="text-slate-600 text-sm">Tests automatisés et revues de code systématiques pour une robustesse absolue.</p>
-                         </div>
-                      </div>
-                   </div>
+      {/* Project Types */}
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+              Types de projets
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Ce que nous <span className="text-primary-500 dark:text-accent-400">développons.</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Quel que soit votre besoin, nous avons l'expertise pour le concrétiser.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {projectTypes.map((project, i) => (
+              <div key={i} className="group bg-white dark:bg-dark-700 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-2xl transition-all">
+                <div className={`h-32 bg-gradient-to-br ${project.gradient} flex items-center justify-center text-white`}>
+                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    {project.icon}
+                  </div>
                 </div>
-                <div className="lg:w-1/2">
-                   <div className="p-8 bg-white rounded-3xl shadow-xl space-y-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                         <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                         <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                         <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                      </div>
-                      <div className="h-4 bg-slate-100 rounded w-3/4"></div>
-                      <div className="h-4 bg-slate-100 rounded w-1/2"></div>
-                      <div className="h-20 bg-primary-50 rounded border-l-4 border-primary-400 flex items-center px-4">
-                         <p className="text-primary-600 font-mono text-sm tracking-tighter">// Déploiement optimisé...</p>
-                      </div>
-                      <div className="h-4 bg-slate-100 rounded w-full"></div>
-                   </div>
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.examples.map((example, j) => (
+                      <span key={j} className="text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-dark-600 px-3 py-1 rounded-full">
+                        {example}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-             </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Articles Relatifs Développement */}
-      <section className="py-24 bg-white">
+      {/* CASE STUDY: Step by Step Process */}
+      <section id="process" className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Articles & Ressources</h2>
-            <p className="text-lg text-slate-600">Guides et conseils pour vos projets de développement</p>
+            <span className="inline-block bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+              📋 Notre méthodologie
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Comment se déroule <span className="text-primary-500 dark:text-accent-400">votre projet ?</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              Du premier contact jusqu'à la mise en production, voici les étapes clés de notre collaboration. 
+              <strong className="text-slate-800 dark:text-white"> Transparence totale sur le processus.</strong>
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Link to="/blog/developpement-sur-mesure-avantages" className="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all">
-              <div className="h-40 bg-gradient-to-br from-pink-500 to-primary-500 flex items-center justify-center">
-                <Code2 className="w-12 h-12 text-white/80" />
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Central line */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-teal-500 transform -translate-x-1/2"></div>
+
+            <div className="space-y-12 lg:space-y-24">
+              {projectPhases.map((phase, i) => (
+                <div key={i} className={`relative flex flex-col lg:flex-row items-center gap-8 ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
+                  
+                  {/* Phase indicator (center on desktop) */}
+                  <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 z-10">
+                    <div className={`w-16 h-16 ${phase.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}>
+                      {phase.icon}
+                    </div>
+                  </div>
+
+                  {/* Content card */}
+                  <div className={`w-full lg:w-5/12 ${i % 2 === 1 ? 'lg:text-right' : ''}`}>
+                    <div className="bg-white dark:bg-dark-800 rounded-3xl p-8 border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+                      {/* Mobile phase indicator */}
+                      <div className="lg:hidden flex items-center space-x-4 mb-6">
+                        <div className={`w-12 h-12 ${phase.color} rounded-xl flex items-center justify-center text-white`}>
+                          {phase.icon}
+                        </div>
+                        <div>
+                          <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">{phase.phase}</span>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">⏱️ {phase.duration}</p>
+                        </div>
+                      </div>
+
+                      {/* Desktop header */}
+                      <div className={`hidden lg:flex items-center space-x-3 mb-4 ${i % 2 === 1 ? 'justify-end' : ''}`}>
+                        <span className={`text-xs font-bold text-white ${phase.color} px-3 py-1 rounded-full`}>{phase.phase}</span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400">⏱️ {phase.duration}</span>
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{phase.title}</h3>
+                      <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">{phase.description}</p>
+
+                      {/* Activities */}
+                      <div className="mb-6">
+                        <h4 className={`text-sm font-bold text-slate-700 dark:text-slate-200 mb-3 ${i % 2 === 1 ? 'lg:text-right' : ''}`}>
+                          Ce que nous faisons :
+                        </h4>
+                        <ul className="space-y-2">
+                          {phase.activities.map((activity, j) => (
+                            <li key={j} className={`flex items-start space-x-2 text-sm text-slate-600 dark:text-slate-400 ${i % 2 === 1 ? 'lg:flex-row-reverse lg:space-x-reverse' : ''}`}>
+                              <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Deliverables */}
+                      <div className={`pt-4 border-t border-slate-100 dark:border-slate-700 ${i % 2 === 1 ? 'lg:text-right' : ''}`}>
+                        <h4 className="text-sm font-bold text-slate-700 dark:text-slate-200 mb-2">📦 Livrables :</h4>
+                        <div className={`flex flex-wrap gap-2 ${i % 2 === 1 ? 'lg:justify-end' : ''}`}>
+                          {phase.deliverables.map((deliverable, j) => (
+                            <span key={j} className="text-xs font-medium text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-500/20 px-3 py-1 rounded-full">
+                              {deliverable}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Empty space for alternating layout */}
+                  <div className="hidden lg:block w-5/12"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Example Case Study */}
+      <section className="py-24 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-accent-500/20 text-accent-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+              💼 Exemple concret
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">
+              Cas client : Application de gestion pour une PME industrielle
+            </h2>
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+              Découvrez comment nous avons accompagné une entreprise de 50 employés dans sa digitalisation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Context */}
+            <div className="bg-white/5 backdrop-blur rounded-3xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-red-500/20 rounded-xl flex items-center justify-center text-red-400 mb-6">
+                <Target className="w-6 h-6" />
               </div>
-              <div className="p-6">
-                <span className="text-xs font-bold text-pink-500 uppercase tracking-wide">Développement</span>
-                <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-primary-500 transition-colors">Quand Opter pour le Sur Mesure ?</h3>
-                <p className="text-slate-600 text-sm">Les avantages d'une solution personnalisée.</p>
+              <h3 className="text-xl font-bold mb-4">🎯 Le problème</h3>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start space-x-2">
+                  <span className="text-red-400">•</span>
+                  <span>Gestion des stocks sur Excel avec erreurs fréquentes</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-red-400">•</span>
+                  <span>Pas de visibilité temps réel sur la production</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-red-400">•</span>
+                  <span>Factures manuelles non conformes TEIF</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-red-400">•</span>
+                  <span>Communication difficile entre ateliers et bureau</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Solution */}
+            <div className="bg-white/5 backdrop-blur rounded-3xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-primary-500/20 rounded-xl flex items-center justify-center text-primary-400 mb-6">
+                <Layers className="w-6 h-6" />
               </div>
-            </Link>
-            <Link to="/blog/transformation-digitale-pme-tunisie" className="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all">
-              <div className="h-40 bg-gradient-to-br from-accent-500 to-primary-500 flex items-center justify-center">
-                <Workflow className="w-12 h-12 text-white/80" />
+              <h3 className="text-xl font-bold mb-4">💡 Notre solution</h3>
+              <ul className="space-y-3 text-slate-300 text-sm">
+                <li className="flex items-start space-x-2">
+                  <span className="text-primary-400">✓</span>
+                  <span>Application web pour le bureau (gestion centralisée)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-primary-400">✓</span>
+                  <span>Application tablette pour les ateliers (saisie temps réel)</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-primary-400">✓</span>
+                  <span>Module facturation conforme TEIF intégré</span>
+                </li>
+                <li className="flex items-start space-x-2">
+                  <span className="text-primary-400">✓</span>
+                  <span>Dashboards de suivi production en temps réel</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Results */}
+            <div className="bg-white/5 backdrop-blur rounded-3xl p-8 border border-white/10">
+              <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400 mb-6">
+                <Zap className="w-6 h-6" />
               </div>
-              <div className="p-6">
-                <span className="text-xs font-bold text-accent-500 uppercase tracking-wide">Transformation Digitale</span>
-                <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-primary-500 transition-colors">Digitaliser Votre Entreprise</h3>
-                <p className="text-slate-600 text-sm">Par où commencer votre transformation.</p>
+              <h3 className="text-xl font-bold mb-4">📈 Les résultats</h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300 text-sm">Erreurs de stock</span>
+                  <span className="text-green-400 font-bold">-85%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300 text-sm">Temps de facturation</span>
+                  <span className="text-green-400 font-bold">-70%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300 text-sm">Productivité équipes</span>
+                  <span className="text-green-400 font-bold">+35%</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-300 text-sm">Délai de livraison projet</span>
+                  <span className="text-accent-400 font-bold">8 semaines</span>
+                </div>
               </div>
-            </Link>
-            <Link to="/blog/securite-donnees-entreprise-bonnes-pratiques" className="group bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all">
-              <div className="h-40 bg-gradient-to-br from-green-500 to-primary-500 flex items-center justify-center">
-                <ShieldCheck className="w-12 h-12 text-white/80" />
-              </div>
-              <div className="p-6">
-                <span className="text-xs font-bold text-green-500 uppercase tracking-wide">Sécurité</span>
-                <h3 className="text-lg font-bold text-slate-900 mt-2 mb-2 group-hover:text-primary-500 transition-colors">Sécurité des Données</h3>
-                <p className="text-slate-600 text-sm">Les bonnes pratiques à adopter.</p>
-              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-slate-400 mb-4">Vous avez un projet similaire ?</p>
+            <Link to={Page.Contact} className="inline-flex items-center space-x-2 bg-accent-500 text-white px-8 py-4 rounded-2xl font-bold hover:bg-accent-600 transition-all">
+              <span>Discutons de votre projet</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Technologies <span className="text-primary-500 dark:text-accent-400">maîtrisées</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Nous choisissons toujours la technologie la plus adaptée à votre projet, pas notre préférée.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techStack.map((stack, i) => (
+              <div key={i} className="bg-slate-50 dark:bg-dark-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-4">{stack.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {stack.techs.map((tech, j) => (
+                    <span key={j} className="text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-dark-700 px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-600">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-gradient-to-br from-primary-500 to-accent-500 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-[150px] opacity-10"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-300 rounded-full blur-[150px] opacity-20"></div>
+        </div>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
+            Prêt à concrétiser votre idée ?
+          </h2>
+          <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto">
+            Décrivez-nous votre projet. Nous vous recontactons sous 24h avec une première analyse et un devis estimatif gratuit.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link 
+              to={Page.Contact}
+              className="px-10 py-5 bg-white text-primary-600 rounded-2xl font-bold text-lg hover:bg-primary-50 transition-all shadow-xl flex items-center justify-center space-x-2"
+            >
+              <span>Démarrer mon projet</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+            <a 
+              href="https://wa.me/21658874825"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-10 py-5 bg-white/10 text-white border border-white/30 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2"
+            >
+              <span>💬 WhatsApp direct</span>
+            </a>
+          </div>
+          <p className="text-primary-200 text-sm mt-8">
+            ✓ Analyse gratuite &nbsp; ✓ Devis sous 48h &nbsp; ✓ Sans engagement
+          </p>
         </div>
       </section>
     </div>

@@ -12,6 +12,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 import { 
   BLOG_POSTS, 
   BLOG_CATEGORIES, 
@@ -49,7 +50,13 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors">
+      <SEO 
+        title="Blog & Actualités"
+        description="Restez informé sur la transformation digitale, facturation électronique, ERP et intelligence artificielle. Conseils et actualités pour les entreprises tunisiennes."
+        keywords="blog CSoluSoft, actualités, facturation électronique, ERP, IA, transformation digitale, Tunisie"
+        url="/blog"
+      />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 bg-gradient-to-br from-dark-900 via-primary-800 to-primary-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
@@ -94,10 +101,10 @@ const Blog: React.FC = () => {
       </section>
 
       {/* Categories Filter */}
-      <section className="py-6 bg-slate-50 border-b border-slate-200 sticky top-20 z-40">
+      <section className="py-6 bg-slate-50 dark:bg-dark-800 border-b border-slate-200 dark:border-slate-700 sticky top-20 z-40 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center space-x-2 text-slate-500 mr-2">
+            <div className="flex items-center space-x-2 text-slate-500 dark:text-slate-400 mr-2">
               <Filter className="w-4 h-4" />
               <span className="text-sm font-medium">Filtrer :</span>
             </div>
@@ -106,7 +113,7 @@ const Blog: React.FC = () => {
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                 selectedCategory === 'all'
                   ? 'bg-primary-500 text-white'
-                  : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  : 'bg-white dark:bg-dark-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-dark-600 border border-slate-200 dark:border-slate-600'
               }`}
             >
               Tous
@@ -118,7 +125,7 @@ const Blog: React.FC = () => {
                 className={`px-3 py-1.5 rounded-full text-sm font-medium transition-all ${
                   selectedCategory === key
                     ? 'bg-primary-500 text-white'
-                    : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                    : 'bg-white dark:bg-dark-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-dark-600 border border-slate-200 dark:border-slate-600'
                 }`}
               >
                 {label}
@@ -130,13 +137,13 @@ const Blog: React.FC = () => {
 
       {/* Featured Posts */}
       {selectedCategory === 'all' && searchQuery === '' && (
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-white dark:bg-dark-900 transition-colors">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center space-x-3 mb-10">
-              <div className="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-orange-600" />
+              <div className="w-10 h-10 bg-orange-100 dark:bg-orange-500/20 rounded-xl flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-orange-600 dark:text-orange-400" />
               </div>
-              <h2 className="text-2xl font-bold text-slate-900">Articles à la Une</h2>
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Articles à la Une</h2>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -185,25 +192,25 @@ const Blog: React.FC = () => {
       )}
 
       {/* Main Content */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Articles List */}
             <div className="lg:col-span-2">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-bold text-slate-900">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                   {selectedCategory === 'all' ? 'Tous les articles' : BLOG_CATEGORIES[selectedCategory].label}
                 </h2>
-                <span className="text-sm text-slate-500">{filteredPosts.length} article(s)</span>
+                <span className="text-sm text-slate-500 dark:text-slate-400">{filteredPosts.length} article(s)</span>
               </div>
 
               {filteredPosts.length === 0 ? (
-                <div className="text-center py-16 bg-white rounded-2xl border border-slate-200">
-                  <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="text-center py-16 bg-white dark:bg-dark-700 rounded-2xl border border-slate-200 dark:border-slate-600">
+                  <div className="w-16 h-16 bg-slate-100 dark:bg-dark-600 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Search className="w-8 h-8 text-slate-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 mb-2">Aucun article trouvé</h3>
-                  <p className="text-slate-500">Essayez avec d'autres mots-clés ou catégories.</p>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Aucun article trouvé</h3>
+                  <p className="text-slate-500 dark:text-slate-400">Essayez avec d'autres mots-clés ou catégories.</p>
                 </div>
               ) : (
                 <div className="space-y-6">
@@ -211,7 +218,7 @@ const Blog: React.FC = () => {
                     <Link
                       key={post.id}
                       to={`/blog/${post.slug}`}
-                      className="group flex flex-col md:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-primary-100 transition-all"
+                      className="group flex flex-col md:flex-row bg-white dark:bg-dark-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-xl hover:border-primary-100 dark:hover:border-primary-500/30 transition-all"
                     >
                       <div className="md:w-72 h-48 md:h-auto shrink-0 overflow-hidden">
                         <img
@@ -225,26 +232,26 @@ const Blog: React.FC = () => {
                           <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${BLOG_CATEGORIES[post.category].color}`}>
                             {BLOG_CATEGORIES[post.category].label}
                           </span>
-                          <span className="text-slate-400 text-sm flex items-center space-x-1">
+                          <span className="text-slate-400 dark:text-slate-500 text-sm flex items-center space-x-1">
                             <Clock className="w-3 h-3" />
                             <span>{post.readTime} min</span>
                           </span>
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-primary-500 transition-colors line-clamp-2">
+                        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors line-clamp-2">
                           {post.title}
                         </h3>
-                        <p className="text-slate-600 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
+                        <p className="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2">{post.excerpt}</p>
                         <div className="flex items-center justify-between">
                           <div className="flex items-center space-x-3">
-                            <div className="w-8 h-8 bg-primary-50 rounded-full flex items-center justify-center text-primary-500 font-bold text-xs">
+                            <div className="w-8 h-8 bg-primary-50 dark:bg-primary-500/20 rounded-full flex items-center justify-center text-primary-500 dark:text-primary-400 font-bold text-xs">
                               {post.author.charAt(0)}
                             </div>
                             <div>
-                              <p className="text-sm font-medium text-slate-900">{post.author}</p>
-                              <p className="text-xs text-slate-500">{formatDate(post.publishedAt)}</p>
+                              <p className="text-sm font-medium text-slate-900 dark:text-white">{post.author}</p>
+                              <p className="text-xs text-slate-500 dark:text-slate-400">{formatDate(post.publishedAt)}</p>
                             </div>
                           </div>
-                          <span className="text-primary-500 font-semibold text-sm flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+                          <span className="text-primary-500 dark:text-accent-400 font-semibold text-sm flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
                             <span>Lire</span>
                             <ArrowRight className="w-4 h-4" />
                           </span>
@@ -259,12 +266,12 @@ const Blog: React.FC = () => {
             {/* Sidebar */}
             <div className="space-y-8">
               {/* Recent Posts */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
+              <div className="bg-white dark:bg-dark-700 rounded-2xl p-6 border border-slate-200 dark:border-slate-600">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-8 h-8 bg-primary-50 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-4 h-4 text-primary-500" />
+                  <div className="w-8 h-8 bg-primary-50 dark:bg-primary-500/20 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-4 h-4 text-primary-500 dark:text-primary-400" />
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900">Articles Récents</h3>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white">Articles Récents</h3>
                 </div>
                 <div className="space-y-4">
                   {recentPosts.map((post) => (
@@ -279,10 +286,10 @@ const Blog: React.FC = () => {
                         className="w-16 h-16 rounded-lg object-cover shrink-0"
                       />
                       <div className="flex-1 min-w-0">
-                        <h4 className="text-sm font-semibold text-slate-900 line-clamp-2 group-hover:text-primary-500 transition-colors">
+                        <h4 className="text-sm font-semibold text-slate-900 dark:text-white line-clamp-2 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">
                           {post.title}
                         </h4>
-                        <p className="text-xs text-slate-500 mt-1">{formatDate(post.publishedAt)}</p>
+                        <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{formatDate(post.publishedAt)}</p>
                       </div>
                     </Link>
                   ))}
@@ -290,8 +297,8 @@ const Blog: React.FC = () => {
               </div>
 
               {/* Categories */}
-              <div className="bg-white rounded-2xl p-6 border border-slate-200">
-                <h3 className="text-lg font-bold text-slate-900 mb-6">Catégories</h3>
+              <div className="bg-white dark:bg-dark-700 rounded-2xl p-6 border border-slate-200 dark:border-slate-600">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-6">Catégories</h3>
                 <div className="space-y-3">
                   {Object.entries(BLOG_CATEGORIES).map(([key, { label, color }]) => {
                     const count = BLOG_POSTS.filter(p => p.category === key).length;
@@ -299,12 +306,12 @@ const Blog: React.FC = () => {
                       <button
                         key={key}
                         onClick={() => setSelectedCategory(key as BlogCategory)}
-                        className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 transition-colors"
+                        className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-dark-600 transition-colors"
                       >
                         <span className={`px-3 py-1 rounded-full text-xs font-bold ${color}`}>
                           {label}
                         </span>
-                        <span className="text-sm text-slate-500">{count}</span>
+                        <span className="text-sm text-slate-500 dark:text-slate-400">{count}</span>
                       </button>
                     );
                   })}

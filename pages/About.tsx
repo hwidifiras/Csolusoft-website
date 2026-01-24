@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Heart, Eye, Users, Award, TrendingUp, Globe, ArrowRight } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   const stats = [
@@ -20,17 +21,23 @@ const About: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-dark-900 transition-colors">
+      <SEO 
+        title="À Propos"
+        description="Découvrez CSoluSoft, votre partenaire en transformation digitale basé à Sfax, Tunisie. Notre mission : propulser votre croissance avec des solutions innovantes."
+        keywords="CSoluSoft, à propos, entreprise, Sfax, Tunisie, transformation digitale, équipe, valeurs"
+        url="/a-propos"
+      />
       {/* Hero */}
-      <section className="py-24 bg-slate-50 text-center">
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 text-center transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="inline-block bg-primary-50 text-primary-600 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
+          <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-6 uppercase tracking-widest">
             Qui sommes-nous
           </span>
-          <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 tracking-tighter">
-            CSoluSoft : <br/><span className="text-primary-500">L'Architecte de votre Succès Digital.</span>
+          <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-8 tracking-tighter">
+            CSoluSoft : <br/><span className="text-primary-500 dark:text-accent-400">L'Architecte de votre Succès Digital.</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
             Fondée par des passionnés de technologie, notre mission est de simplifier la gestion des entreprises grâce à l'innovation logicielle.
           </p>
         </div>
@@ -51,7 +58,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Mission/Vision/Values */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
               <div>
@@ -61,7 +68,7 @@ const About: React.FC = () => {
                      <div className="w-24 h-24 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-6">
                        <Globe className="w-12 h-12" />
                      </div>
-                     <div className="text-2xl font-bold">Présents en France</div>
+                     <div className="text-2xl font-bold">Présents en Tunisie</div>
                      <div className="text-primary-50">& à l'international</div>
                    </div>
                  </div>
@@ -69,36 +76,36 @@ const About: React.FC = () => {
               <div className="space-y-10">
                  <div>
                     <div className="flex items-center space-x-4 mb-4">
-                       <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center">
-                         <Target className="w-6 h-6 text-primary-500" />
+                       <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center">
+                         <Target className="w-6 h-6 text-primary-500 dark:text-primary-400" />
                        </div>
-                       <h3 className="text-2xl font-bold text-slate-900">Notre Mission</h3>
+                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Notre Mission</h3>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                        Rendre la technologie complexe accessible et utile à toutes les entreprises, peu importe leur taille ou leur secteur d'activité.
                     </p>
                  </div>
                  <div>
                     <div className="flex items-center space-x-4 mb-4">
-                       <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center">
-                         <Eye className="w-6 h-6 text-primary-500" />
+                       <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center">
+                         <Eye className="w-6 h-6 text-primary-500 dark:text-primary-400" />
                        </div>
-                       <h3 className="text-2xl font-bold text-slate-900">Notre Vision</h3>
+                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Notre Vision</h3>
                     </div>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                        Devenir le partenaire de référence pour la transformation digitale européenne en combinant ERP, IA et service client d'exception.
                     </p>
                  </div>
                  <div>
                     <div className="flex items-center space-x-4 mb-4">
-                       <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center">
-                         <Heart className="w-6 h-6 text-primary-500" />
+                       <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center">
+                         <Heart className="w-6 h-6 text-primary-500 dark:text-primary-400" />
                        </div>
-                       <h3 className="text-2xl font-bold text-slate-900">Nos Valeurs</h3>
+                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Nos Valeurs</h3>
                     </div>
                     <div className="flex flex-wrap gap-3">
                        {['Intégrité', 'Innovation continue', 'Écoute client', 'Excellence technique'].map(v => (
-                         <span key={v} className="bg-primary-50 text-primary-600 px-4 py-2 rounded-full font-bold text-sm">
+                         <span key={v} className="bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 px-4 py-2 rounded-full font-bold text-sm">
                            {v}
                          </span>
                        ))}
@@ -110,11 +117,11 @@ const About: React.FC = () => {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Notre Équipe</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Notre Équipe</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Des experts passionnés qui travaillent chaque jour pour votre succès.
             </p>
           </div>
@@ -124,8 +131,8 @@ const About: React.FC = () => {
                 <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-primary-400 to-primary-500 rounded-3xl flex items-center justify-center mx-auto mb-6 text-white text-2xl md:text-3xl font-bold shadow-lg group-hover:scale-105 transition-transform">
                   {member.initials}
                 </div>
-                <h3 className="text-lg font-bold text-slate-900">{member.name}</h3>
-                <p className="text-slate-500 text-sm">{member.role}</p>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white">{member.name}</h3>
+                <p className="text-slate-500 dark:text-slate-400 text-sm">{member.role}</p>
               </div>
             ))}
           </div>
@@ -133,26 +140,26 @@ const About: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">Pourquoi nous choisir ?</h2>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Pourquoi nous choisir ?</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all">
-              <Award className="w-10 h-10 text-primary-500 mb-6" />
-              <h3 className="text-xl font-bold mb-4">Expertise reconnue</h3>
-              <p className="text-slate-600">Plus de 10 ans d'expérience dans le développement de solutions métiers.</p>
+            <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all bg-white dark:bg-dark-800">
+              <Award className="w-10 h-10 text-primary-500 dark:text-accent-400 mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">Expertise reconnue</h3>
+              <p className="text-slate-600 dark:text-slate-400">Plus de 10 ans d'expérience dans le développement de solutions métiers.</p>
             </div>
-            <div className="p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all">
-              <Users className="w-10 h-10 text-primary-500 mb-6" />
-              <h3 className="text-xl font-bold mb-4">Approche humaine</h3>
-              <p className="text-slate-600">Un interlocuteur dédié et une communication transparente à chaque étape.</p>
+            <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all bg-white dark:bg-dark-800">
+              <Users className="w-10 h-10 text-primary-500 dark:text-accent-400 mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">Approche humaine</h3>
+              <p className="text-slate-600 dark:text-slate-400">Un interlocuteur dédié et une communication transparente à chaque étape.</p>
             </div>
-            <div className="p-8 rounded-3xl border border-slate-100 hover:shadow-xl transition-all">
-              <TrendingUp className="w-10 h-10 text-primary-500 mb-6" />
-              <h3 className="text-xl font-bold mb-4">ROI mesurable</h3>
-              <p className="text-slate-600">Des solutions qui génèrent des résultats concrets et mesurables.</p>
+            <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all bg-white dark:bg-dark-800">
+              <TrendingUp className="w-10 h-10 text-primary-500 dark:text-accent-400 mb-6" />
+              <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">ROI mesurable</h3>
+              <p className="text-slate-600 dark:text-slate-400">Des solutions qui génèrent des résultats concrets et mesurables.</p>
             </div>
           </div>
         </div>

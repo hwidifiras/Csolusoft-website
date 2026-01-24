@@ -8,43 +8,44 @@ import {
   Building2, Factory, ShoppingCart, Stethoscope, Utensils
 } from 'lucide-react';
 import { Page } from '../types';
+import SEO from '../components/SEO';
 
 const ERP: React.FC = () => {
   const modules = [
     {
       title: "Gestion de stock & logistique",
       description: "Suivi des mouvements, inventaires tournants, alertes de seuil et gestion multi-entrepôts.",
-      icon: <Database className="w-8 h-8 text-primary-500" />,
+      icon: Database,
       features: ["Inventaire temps réel", "Multi-entrepôts", "Alertes automatiques", "Traçabilité complète"]
     },
     {
       title: "Gestion comptable & financière",
       description: "Saisie automatisée, écritures analytiques, bilans et intégration des flux bancaires.",
-      icon: <LineChart className="w-8 h-8 text-primary-500" />,
+      icon: LineChart,
       features: ["Plan comptable tunisien", "Déclarations fiscales", "Rapprochement bancaire", "Multi-devises"]
     },
     {
       title: "Gestion commerciale",
       description: "De la prospection à la facturation : CRM, devis, bons de commande et catalogues produits.",
-      icon: <BarChart3 className="w-8 h-8 text-primary-500" />,
+      icon: BarChart3,
       features: ["CRM intégré", "Devis & factures", "Suivi des ventes", "Catalogue produits"]
     },
     {
       title: "Reporting & tableaux de bord",
       description: "Visualisation de données interactive et rapports personnalisables pour un pilotage agile.",
-      icon: <LayoutDashboard className="w-8 h-8 text-primary-500" />,
+      icon: LayoutDashboard,
       features: ["Dashboards temps réel", "KPIs personnalisés", "Export PDF/Excel", "Prévisions IA"]
     },
     {
       title: "Ressources humaines",
       description: "Gestion des employés, paie, congés, présences et évaluations de performance.",
-      icon: <Users className="w-8 h-8 text-primary-500" />,
+      icon: Users,
       features: ["Fiches employés", "Calcul paie CNSS", "Gestion congés", "Pointage digital"]
     },
     {
       title: "Production & Manufacturing",
       description: "Planification de production, ordres de fabrication, nomenclatures et contrôle qualité.",
-      icon: <Settings className="w-8 h-8 text-primary-500" />,
+      icon: Settings,
       features: ["Ordres de fabrication", "Nomenclatures", "Contrôle qualité", "Planification MRP"]
     }
   ];
@@ -92,22 +93,28 @@ const ERP: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-dark-900 transition-colors">
+      <SEO 
+        title="Solutions ERP"
+        description="Solutions ERP modulaires et personnalisées pour PME en Tunisie. Gestion de stock, comptabilité, facturation, CRM et plus. Simplifiez votre gestion d'entreprise."
+        keywords="ERP Tunisie, logiciel de gestion, gestion de stock, comptabilité, facturation, CRM, PME, entreprise"
+        url="/solutions-erp"
+      />
       {/* Hero Section Enhanced */}
-      <section className="relative py-24 bg-gradient-to-br from-slate-50 via-primary-50/30 to-slate-50 overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-br from-slate-50 via-primary-50/30 to-slate-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 overflow-hidden transition-colors">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwNTU0YmQiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-60"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-600 px-4 py-2 rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center space-x-2 bg-primary-100 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 px-4 py-2 rounded-full text-sm font-semibold mb-8">
               <Zap className="w-4 h-4" />
               <span>Solution ERP complète & modulaire</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">
-              L'ERP qui s'adapte à <span className="text-primary-500">vos besoins.</span>
+            <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
+              L'ERP qui s'adapte à <span className="text-primary-500 dark:text-accent-400">vos besoins.</span>
             </h1>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-10">
+            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-10">
               Fini les logiciels rigides. Notre ERP sur mesure évolue avec votre entreprise : 
-              <strong className="text-slate-800"> Web, Mobile ou Desktop</strong> — vous choisissez la plateforme, nous développons la solution.
+              <strong className="text-slate-800 dark:text-white"> Web, Mobile ou Desktop</strong> — vous choisissez la plateforme, nous développons la solution.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to={Page.Contact} className="px-8 py-4 bg-primary-500 text-white rounded-2xl font-bold hover:bg-primary-600 transition-all shadow-lg shadow-primary-200 flex items-center justify-center space-x-2">
@@ -140,23 +147,23 @@ const ERP: React.FC = () => {
       </section>
 
       {/* Platform Choices Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-accent-50 text-accent-600 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+            <span className="inline-block bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
               Multi-plateforme
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
-              Votre ERP, <span className="text-primary-500">partout.</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Votre ERP, <span className="text-primary-500 dark:text-accent-400">partout.</span>
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Selon vos besoins et votre façon de travailler, nous déployons votre solution sur la plateforme idéale — ou sur les trois à la fois.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {platforms.map((platform, i) => (
-              <div key={i} className="group relative bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-2xl transition-all duration-300">
+              <div key={i} className="group relative bg-white dark:bg-dark-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-2xl transition-all duration-300">
                 <div className={`h-48 bg-gradient-to-br ${platform.gradient} flex items-center justify-center text-white relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all"></div>
                   <div className="relative z-10 text-center">
@@ -168,12 +175,12 @@ const ERP: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-8">
-                  <p className="text-slate-600 mb-6 leading-relaxed">{platform.description}</p>
+                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">{platform.description}</p>
                   <ul className="space-y-3">
                     {platform.features.map((feature, j) => (
                       <li key={j} className="flex items-center space-x-3 text-sm">
-                        <CheckCircle2 className="w-5 h-5 text-green-500 shrink-0" />
-                        <span className="text-slate-700">{feature}</span>
+                        <CheckCircle2 className="w-5 h-5 text-green-500 dark:text-green-400 shrink-0" />
+                        <span className="text-slate-700 dark:text-slate-200">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -183,53 +190,53 @@ const ERP: React.FC = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <div className="inline-flex items-center space-x-3 bg-slate-100 px-6 py-4 rounded-2xl">
-              <Shield className="w-6 h-6 text-primary-500" />
-              <span className="text-slate-700 font-medium">Toutes les plateformes synchronisées en temps réel avec vos données centralisées</span>
+            <div className="inline-flex items-center space-x-3 bg-slate-100 dark:bg-dark-700 px-6 py-4 rounded-2xl">
+              <Shield className="w-6 h-6 text-primary-500 dark:text-accent-400" />
+              <span className="text-slate-700 dark:text-slate-200 font-medium">Toutes les plateformes synchronisées en temps réel avec vos données centralisées</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* Modules Section Enhanced */}
-      <section id="modules" className="py-24 bg-slate-50">
+      <section id="modules" className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="inline-block bg-primary-50 text-primary-600 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+            <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
               Modules fonctionnels
             </span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6">
-              Une solution <span className="text-primary-500">complète.</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Une solution <span className="text-primary-500 dark:text-accent-400">complète.</span>
             </h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Choisissez uniquement les modules dont vous avez besoin. Notre architecture modulaire vous permet de démarrer simple et d'évoluer progressivement.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {modules.map((m, i) => (
-              <div key={i} className="group bg-white p-8 rounded-3xl border border-slate-200 hover:shadow-xl hover:border-primary-200 transition-all">
-                <div className="w-16 h-16 bg-primary-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:scale-110 transition-all">
-                  <div className="group-hover:text-white transition-colors">
-                    {m.icon}
-                  </div>
+            {modules.map((m, i) => {
+              const IconComponent = m.icon;
+              return (
+              <div key={i} className="group bg-white dark:bg-dark-700 p-8 rounded-3xl border border-slate-200 dark:border-slate-600 hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-500/30 transition-all">
+                <div className="w-16 h-16 bg-primary-50 dark:bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:scale-110 transition-all">
+                  <IconComponent className="w-8 h-8 text-primary-500 dark:text-primary-400 group-hover:text-white transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900">{m.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed mb-6">{m.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{m.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">{m.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {m.features.map((feature, j) => (
-                    <span key={j} className="text-xs font-medium text-primary-600 bg-primary-50 px-3 py-1 rounded-full">
+                    <span key={j} className="text-xs font-medium text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-500/20 px-3 py-1 rounded-full">
                       {feature}
                     </span>
                   ))}
                 </div>
               </div>
-            ))}
+            )})}
           </div>
 
           <div className="mt-12 text-center">
-            <p className="text-slate-500 mb-4">Besoin d'un module spécifique ?</p>
-            <Link to={Page.Contact} className="inline-flex items-center space-x-2 text-primary-500 font-bold hover:text-primary-600 transition-colors">
+            <p className="text-slate-500 dark:text-slate-400 mb-4">Besoin d'un module spécifique ?</p>
+            <Link to={Page.Contact} className="inline-flex items-center space-x-2 text-primary-500 dark:text-accent-400 font-bold hover:text-primary-600 dark:hover:text-accent-300 transition-colors">
               <span>Contactez-nous pour un développement sur mesure</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -238,28 +245,28 @@ const ERP: React.FC = () => {
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
-              <span className="inline-block bg-accent-50 text-accent-600 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+              <span className="inline-block bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
                 Secteurs d'activité
               </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-                Adapté à <span className="text-primary-500">votre métier.</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+                Adapté à <span className="text-primary-500 dark:text-accent-400">votre métier.</span>
               </h2>
-              <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
                 Chaque secteur a ses spécificités. Notre ERP intègre des fonctionnalités métier préconfigurées pour vous faire gagner du temps dès le premier jour.
               </p>
               <div className="space-y-4">
                 {industries.map((industry, i) => (
-                  <div key={i} className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-50 hover:bg-primary-50 transition-colors group cursor-default">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-all shadow-sm">
+                  <div key={i} className="flex items-center space-x-4 p-4 rounded-2xl bg-slate-50 dark:bg-dark-800 hover:bg-primary-50 dark:hover:bg-primary-500/10 transition-colors group cursor-default">
+                    <div className="w-12 h-12 bg-white dark:bg-dark-700 rounded-xl flex items-center justify-center text-primary-500 dark:text-primary-400 group-hover:bg-primary-500 group-hover:text-white transition-all shadow-sm">
                       {industry.icon}
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-900">{industry.name}</h4>
-                      <p className="text-sm text-slate-500">{industry.desc}</p>
+                      <h4 className="font-bold text-slate-900 dark:text-white">{industry.name}</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">{industry.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -343,11 +350,11 @@ const ERP: React.FC = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
-              Pourquoi choisir <span className="text-primary-500">CSoluSoft</span> ?
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Pourquoi choisir <span className="text-primary-500 dark:text-accent-400">CSoluSoft</span> ?
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -375,8 +382,8 @@ const ERP: React.FC = () => {
             ].map((item, i) => (
               <div key={i} className="text-center p-6">
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -384,31 +391,31 @@ const ERP: React.FC = () => {
       </section>
 
       {/* Articles Relatifs */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Articles & Ressources ERP</h2>
-            <p className="text-lg text-slate-600">Approfondissez vos connaissances sur la gestion d'entreprise</p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">Articles & Ressources ERP</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">Approfondissez vos connaissances sur la gestion d'entreprise</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Link to="/blog/erp-moderne-vs-excel-pourquoi-migrer" className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all">
+            <Link to="/blog/erp-moderne-vs-excel-pourquoi-migrer" className="group bg-white dark:bg-dark-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-xl transition-all">
               <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center">
                 <Database className="w-16 h-16 text-white/80" />
               </div>
               <div className="p-6">
-                <span className="text-xs font-bold text-primary-500 uppercase tracking-wide">ERP & Gestion</span>
-                <h3 className="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-primary-500 transition-colors">ERP Moderne vs Excel : 7 Raisons de Migrer en 2026</h3>
-                <p className="text-slate-600 text-sm">Découvrez pourquoi 2026 est l'année idéale pour adopter un ERP moderne.</p>
+                <span className="text-xs font-bold text-primary-500 dark:text-accent-400 uppercase tracking-wide">ERP & Gestion</span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">ERP Moderne vs Excel : 7 Raisons de Migrer en 2026</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Découvrez pourquoi 2026 est l'année idéale pour adopter un ERP moderne.</p>
               </div>
             </Link>
-            <Link to="/blog/transformation-digitale-pme-tunisie" className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl transition-all">
+            <Link to="/blog/transformation-digitale-pme-tunisie" className="group bg-white dark:bg-dark-700 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-xl transition-all">
               <div className="h-48 bg-gradient-to-br from-accent-500 to-primary-500 flex items-center justify-center">
                 <TrendingUp className="w-16 h-16 text-white/80" />
               </div>
               <div className="p-6">
-                <span className="text-xs font-bold text-accent-500 uppercase tracking-wide">Transformation Digitale</span>
-                <h3 className="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-primary-500 transition-colors">Transformation Digitale des PME Tunisiennes</h3>
-                <p className="text-slate-600 text-sm">Un guide pratique pour digitaliser votre entreprise étape par étape.</p>
+                <span className="text-xs font-bold text-accent-500 dark:text-accent-400 uppercase tracking-wide">Transformation Digitale</span>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-2 mb-3 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">Transformation Digitale des PME Tunisiennes</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm">Un guide pratique pour digitaliser votre entreprise étape par étape.</p>
               </div>
             </Link>
           </div>
@@ -437,10 +444,12 @@ const ERP: React.FC = () => {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <a 
-              href="tel:+21612345678"
+              href="https://wa.me/21658874825"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-10 py-5 bg-white/10 text-white border border-white/30 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2"
             >
-              <span>📞 +216 12 345 678</span>
+              <span>💬 WhatsApp</span>
             </a>
           </div>
           <p className="text-primary-200 text-sm mt-8">

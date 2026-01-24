@@ -4,6 +4,7 @@ import { Routes, Route, useLocation, Link } from 'react-router-dom';
 import { BookOpen, X } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { Page } from './types';
 
 // Lazy load pages for better performance
@@ -22,15 +23,15 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading spinner component
 const PageLoader: React.FC = () => (
-  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+  <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-dark-900">
     <div className="text-center">
       <div className="w-16 h-16 border-4 border-primary-100 border-t-primary-500 rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-slate-600 font-medium">Chargement...</p>
+      <p className="text-slate-600 dark:text-slate-400 font-medium">Chargement...</p>
     </div>
   </div>
 );
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
   const { pathname } = useLocation();
   const [showBlogTooltip, setShowBlogTooltip] = useState(false);
 
@@ -42,7 +43,7 @@ const App: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white dark:bg-dark-900 transition-colors">
       <Navbar />
       <main id="main-content" className="flex-grow pt-20" role="main">
         <Suspense fallback={<PageLoader />}>
@@ -94,6 +95,14 @@ const App: React.FC = () => {
         </div>
       )}
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 };
 
