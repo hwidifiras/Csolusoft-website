@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
     {/* Skip to content link for accessibility */}
     <a 
       href="#main-content" 
-      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg focus:outline-none"
+      className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-primary-500 focus:text-white focus:rounded-lg focus:outline-none"
     >
       Aller au contenu principal
     </a>
@@ -24,13 +24,12 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <Link to={Page.Home} className="flex items-center space-x-2 group" aria-label="CSoluSoft - Accueil">
-              <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-xl group-hover:rotate-12 transition-transform">
-                C
-              </div>
-              <span className="text-2xl font-extrabold tracking-tighter text-slate-900">
-                CSolu<span className="text-blue-600">Soft</span>
-              </span>
+            <Link to={Page.Home} className="flex items-center group" aria-label="CSoluSoft - Accueil">
+              <img 
+                src="/img/solusoft-logo-navbar-light.svg" 
+                alt="CSoluSoft Logo" 
+                className="h-12 w-auto group-hover:scale-105 transition-transform"
+              />
             </Link>
           </div>
 
@@ -40,7 +39,7 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="relative px-4 py-2 bg-blue-600 text-white text-sm font-bold rounded-full hover:bg-blue-700 hover:shadow-lg transition-all flex items-center space-x-1"
+                  className="relative px-4 py-2 bg-accent-500 text-white text-sm font-bold rounded-full hover:bg-accent-600 hover:shadow-lg transition-all flex items-center space-x-1"
                 >
                   <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse"></span>
                   <span>{link.label}</span>
@@ -49,17 +48,20 @@ const Navbar: React.FC = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                    isActive(link.href) ? 'text-blue-600' : 'text-slate-600'
+                  className={`relative text-sm font-medium transition-colors hover:text-primary-500 ${
+                    isActive(link.href) ? 'text-primary-500' : 'text-slate-600'
                   }`}
                 >
                   {link.label}
+                  {isActive(link.href) && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary-500 rounded-full"></span>
+                  )}
                 </Link>
               )
             ))}
             <Link
               to={Page.Contact}
-              className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-600 transition-all flex items-center space-x-2"
+              className="bg-primary-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary-600 transition-all flex items-center space-x-2"
             >
               <span>Devis Gratuit</span>
               <ChevronRight className="w-4 h-4" />
@@ -69,7 +71,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)} 
-              className="text-slate-900 p-2 rounded-lg hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="text-slate-900 p-2 rounded-lg hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-primary-500"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
@@ -81,8 +83,14 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div id="mobile-menu" className="md:hidden glass border-t border-slate-200" role="menu" aria-label="Menu mobile">
+      <div 
+        id="mobile-menu" 
+        className={`md:hidden glass border-t border-slate-200 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+        }`}
+        role="menu" 
+        aria-label="Menu mobile"
+      >
           <div className="px-4 py-6 space-y-4">
             {NAV_LINKS.map((link) => (
               link.href === Page.Billing ? (
@@ -90,7 +98,7 @@ const Navbar: React.FC = () => {
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-bold"
+                  className="block w-full text-center bg-accent-500 text-white py-3 rounded-xl font-bold"
                 >
                   {link.label} - NOUVEAU
                 </Link>
@@ -100,7 +108,7 @@ const Navbar: React.FC = () => {
                   to={link.href}
                   onClick={() => setIsOpen(false)}
                   className={`block text-lg font-medium ${
-                    isActive(link.href) ? 'text-blue-600' : 'text-slate-700'
+                    isActive(link.href) ? 'text-primary-500' : 'text-slate-700'
                   }`}
                 >
                   {link.label}
@@ -110,13 +118,12 @@ const Navbar: React.FC = () => {
             <Link
               to={Page.Contact}
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-blue-600 text-white py-3 rounded-xl font-bold"
+              className="block w-full text-center bg-primary-500 text-white py-3 rounded-xl font-bold"
             >
               Contactez-nous
             </Link>
           </div>
         </div>
-      )}
     </nav>
     </>
   );

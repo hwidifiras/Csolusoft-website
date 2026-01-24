@@ -6,45 +6,44 @@ import { Page } from '../types';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-slate-900 text-slate-300 py-16">
+    <footer className="bg-dark-900 text-slate-300 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg">
-                C
-              </div>
-              <span className="text-xl font-extrabold tracking-tighter text-white">
-                CSolu<span className="text-blue-400">Soft</span>
-              </span>
+            <div className="flex items-center">
+              <img 
+                src="/img/solusoft-logo-footer-dark.svg" 
+                alt="CSoluSoft Logo" 
+                className="h-10 w-auto"
+              />
             </div>
             <p className="text-sm leading-relaxed text-slate-400">
               Experts en transformation digitale, nous concevons des outils de gestion intelligents pour propulser votre croissance.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-blue-400 transition-colors" aria-label="Suivez-nous sur LinkedIn"><Linkedin className="w-5 h-5" aria-hidden="true" /></a>
-              <a href="#" className="hover:text-blue-400 transition-colors" aria-label="Suivez-nous sur Twitter"><Twitter className="w-5 h-5" aria-hidden="true" /></a>
-              <a href="#" className="hover:text-blue-400 transition-colors" aria-label="Voir notre GitHub"><Github className="w-5 h-5" aria-hidden="true" /></a>
+              <span className="text-slate-500 hover:text-slate-400 transition-colors cursor-not-allowed" title="Bientôt disponible"><Linkedin className="w-5 h-5" aria-hidden="true" /></span>
+              <span className="text-slate-500 hover:text-slate-400 transition-colors cursor-not-allowed" title="Bientôt disponible"><Twitter className="w-5 h-5" aria-hidden="true" /></span>
+              <span className="text-slate-500 hover:text-slate-400 transition-colors cursor-not-allowed" title="Bientôt disponible"><Github className="w-5 h-5" aria-hidden="true" /></span>
             </div>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">Solutions</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to={Page.Billing} className="hover:text-blue-400">Facturation Électronique</Link></li>
-              <li><Link to={Page.ERP} className="hover:text-blue-400">ERP sur mesure</Link></li>
-              <li><Link to={Page.AI} className="hover:text-blue-400">Intelligence Artificielle</Link></li>
-              <li><Link to={Page.Dev} className="hover:text-blue-400">Développement Web/Mobile</Link></li>
+              <li><Link to={Page.Billing} className="hover:text-accent-500">Facturation Électronique</Link></li>
+              <li><Link to={Page.ERP} className="hover:text-accent-500">ERP sur mesure</Link></li>
+              <li><Link to={Page.AI} className="hover:text-accent-500">Intelligence Artificielle</Link></li>
+              <li><Link to={Page.Dev} className="hover:text-accent-500">Développement Web/Mobile</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">Liens Utiles</h4>
             <ul className="space-y-3 text-sm">
-              <li><Link to={Page.About} className="hover:text-blue-400">À Propos</Link></li>
-              <li><Link to={Page.Contact} className="hover:text-blue-400">Nous Contacter</Link></li>
-              <li><a href="#" className="hover:text-blue-400">Support Client</a></li>
-              <li><a href="#" className="hover:text-blue-400">Mentions Légales</a></li>
+              <li><Link to={Page.About} className="hover:text-accent-500">À Propos</Link></li>
+              <li><Link to={Page.Contact} className="hover:text-accent-500">Nous Contacter</Link></li>
+              <li><Link to={Page.Contact} className="hover:text-accent-500">Support Client</Link></li>
+              <li><Link to={Page.Blog} className="hover:text-accent-500">Blog & Ressources</Link></li>
             </ul>
           </div>
 
@@ -52,26 +51,26 @@ const Footer: React.FC = () => {
             <h4 className="text-white font-bold mb-6">Contact</h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-400 shrink-0" />
+                <MapPin className="w-5 h-5 text-accent-500 shrink-0" />
                 <span>123 Avenue de l'Innovation,<br />75000 Paris, France</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-400 shrink-0" />
+                <Phone className="w-5 h-5 text-accent-500 shrink-0" />
                 <span>+33 (0)1 23 45 67 89</span>
               </li>
               <li className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-400 shrink-0" />
+                <Mail className="w-5 h-5 text-accent-500 shrink-0" />
                 <span>contact@csolusoft.com</span>
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
+        <div className="border-t border-dark-700 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
           <p>© 2026 Cloud Solu Soft (CSoluSoft). Tous droits réservés.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white">Confidentialité</a>
-            <a href="#" className="hover:text-white">Cookies</a>
+            <span className="cursor-default" title="Politique de confidentialité - Bientôt disponible">Confidentialité</span>
+            <span className="cursor-default" title="Gestion des cookies - Bientôt disponible">Cookies</span>
           </div>
         </div>
       </div>

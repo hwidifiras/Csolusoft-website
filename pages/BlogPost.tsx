@@ -24,6 +24,15 @@ import {
   BlogPost as BlogPostType
 } from '../data/blogData';
 
+// Logo component for blog post header
+const BlogLogo: React.FC = () => (
+  <img 
+    src="/img/solusoft-logo-hero-dark.svg" 
+    alt="CSoluSoft" 
+    className="h-10 w-auto opacity-80"
+  />
+);
+
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
@@ -42,7 +51,7 @@ const BlogPost: React.FC = () => {
           <p className="text-slate-600 mb-8">L'article que vous recherchez n'existe pas ou a été déplacé.</p>
           <Link
             to="/blog"
-            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-700 transition-all"
+            className="inline-flex items-center space-x-2 bg-accent-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-accent-600 transition-all"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retour au blog</span>
@@ -172,8 +181,8 @@ const BlogPost: React.FC = () => {
       if (trimmedLine.startsWith('> ')) {
         flushList();
         elements.push(
-          <blockquote key={idx} className="border-l-4 border-blue-500 bg-blue-50 px-6 py-4 my-6 rounded-r-xl">
-            <p className="text-blue-900 font-medium italic">
+          <blockquote key={idx} className="border-l-4 border-primary-400 bg-primary-50 px-6 py-4 my-6 rounded-r-xl">
+            <p className="text-primary-800 font-medium italic">
               {trimmedLine.replace('> ', '').replace(/\*\*/g, '')}
             </p>
           </blockquote>
@@ -217,12 +226,17 @@ const BlogPost: React.FC = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero / Header */}
-      <section className="relative pt-24 pb-16 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
+      <section className="relative pt-24 pb-16 bg-gradient-to-br from-dark-900 via-primary-800 to-primary-900 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Logo */}
+          <div className="mb-6">
+            <BlogLogo />
+          </div>
+          
           {/* Breadcrumb */}
-          <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-8">
+          <nav className="flex items-center space-x-2 text-sm text-primary-100 mb-8">
             <Link to="/" className="hover:text-white transition-colors">Accueil</Link>
             <ChevronRight className="w-4 h-4" />
             <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
@@ -235,11 +249,11 @@ const BlogPost: React.FC = () => {
             <span className={`inline-block px-4 py-1.5 rounded-full text-sm font-bold ${BLOG_CATEGORIES[post.category].color}`}>
               {BLOG_CATEGORIES[post.category].label}
             </span>
-            <span className="flex items-center space-x-2 text-blue-200 text-sm">
+            <span className="flex items-center space-x-2 text-primary-100 text-sm">
               <Calendar className="w-4 h-4" />
               <span>{formatDate(post.publishedAt)}</span>
             </span>
-            <span className="flex items-center space-x-2 text-blue-200 text-sm">
+            <span className="flex items-center space-x-2 text-primary-100 text-sm">
               <Clock className="w-4 h-4" />
               <span>{post.readTime} min de lecture</span>
             </span>
@@ -252,18 +266,18 @@ const BlogPost: React.FC = () => {
 
           {/* Author */}
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
+            <div className="w-12 h-12 bg-primary-400 rounded-full flex items-center justify-center text-white font-bold text-lg">
               {post.author.charAt(0)}
             </div>
             <div>
               <p className="text-white font-semibold">{post.author}</p>
-              <p className="text-blue-200 text-sm">{post.authorRole}</p>
+              <p className="text-primary-100 text-sm">{post.authorRole}</p>
             </div>
           </div>
         </div>
 
         {/* Decorative */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-[150px] opacity-20 translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-400 rounded-full blur-[150px] opacity-20 translate-x-1/2 translate-y-1/2"></div>
       </section>
 
       {/* Featured Image */}
@@ -289,7 +303,7 @@ const BlogPost: React.FC = () => {
                   href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-primary-500 hover:text-white transition-all"
                 >
                   <Facebook className="w-4 h-4" />
                 </a>
@@ -305,13 +319,13 @@ const BlogPost: React.FC = () => {
                   href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareTitle}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-blue-700 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-primary-600 hover:text-white transition-all"
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <button
                   onClick={() => navigator.clipboard.writeText(shareUrl)}
-                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-slate-900 hover:text-white transition-all"
+                  className="w-10 h-10 bg-slate-100 rounded-full flex items-center justify-center text-slate-600 hover:bg-dark-900 hover:text-white transition-all"
                   title="Copier le lien"
                 >
                   <Link2 className="w-4 h-4" />
@@ -344,22 +358,22 @@ const BlogPost: React.FC = () => {
               </div>
 
               {/* CTA */}
-              <div className="mt-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 md:p-12 text-white">
+              <div className="mt-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-3xl p-8 md:p-12 text-white">
                 <h3 className="text-2xl font-bold mb-4">Besoin d'accompagnement ?</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-primary-50 mb-6">
                   Nos experts sont disponibles pour vous aider à mettre en œuvre les solutions adaptées à votre entreprise.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     to={Page.Contact}
-                    className="inline-flex items-center justify-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-blue-50 transition-all"
+                    className="inline-flex items-center justify-center space-x-2 bg-white text-primary-500 px-6 py-3 rounded-xl font-bold hover:bg-primary-50 transition-all"
                   >
                     <span>Contactez-nous</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                   <Link
                     to={Page.Billing}
-                    className="inline-flex items-center justify-center space-x-2 bg-blue-500 text-white px-6 py-3 rounded-xl font-bold hover:bg-blue-400 transition-all"
+                    className="inline-flex items-center justify-center space-x-2 bg-primary-400 text-white px-6 py-3 rounded-xl font-bold hover:bg-primary-300 transition-all"
                   >
                     <span>Voir nos solutions</span>
                   </Link>
@@ -380,7 +394,7 @@ const BlogPost: React.FC = () => {
                 <Link
                   key={relatedPost.id}
                   to={`/blog/${relatedPost.slug}`}
-                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-blue-200 transition-all"
+                  className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-xl hover:border-primary-100 transition-all"
                 >
                   <div className="h-48 overflow-hidden">
                     <img
@@ -393,7 +407,7 @@ const BlogPost: React.FC = () => {
                     <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold mb-3 ${BLOG_CATEGORIES[relatedPost.category].color}`}>
                       {BLOG_CATEGORIES[relatedPost.category].label}
                     </span>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-primary-500 transition-colors line-clamp-2">
                       {relatedPost.title}
                     </h3>
                     <p className="text-slate-600 text-sm line-clamp-2">{relatedPost.excerpt}</p>
@@ -410,7 +424,7 @@ const BlogPost: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/blog"
-            className="inline-flex items-center space-x-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
+            className="inline-flex items-center space-x-2 text-primary-500 font-semibold hover:text-primary-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Retour au blog</span>

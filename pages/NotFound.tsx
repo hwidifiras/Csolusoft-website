@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
             404
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 bg-blue-600 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-blue-500/30 animate-bounce">
+            <div className="w-32 h-32 bg-primary-500 rounded-[2rem] flex items-center justify-center shadow-2xl shadow-primary-500/30 animate-bounce">
               <Search className="w-16 h-16 text-white" />
             </div>
           </div>
@@ -33,8 +33,7 @@ const NotFound: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to={Page.Home}
-            className="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200"
-          >
+            className="w-full sm:w-auto px-8 py-4 bg-accent-500 text-white rounded-2xl font-bold flex items-center justify-center space-x-2 hover:bg-accent-600 transition-all shadow-lg shadow-accent-200">
             <Home className="w-5 h-5" />
             <span>Retour à l'accueil</span>
           </Link>
@@ -51,15 +50,15 @@ const NotFound: React.FC = () => {
         <div className="mt-16 pt-8 border-t border-slate-200">
           <p className="text-sm text-slate-500 mb-4">Ou consultez nos pages populaires :</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link to={Page.Billing} className="text-sm text-blue-600 hover:underline font-medium">
+            <Link to={Page.Billing} className="text-sm text-primary-500 hover:underline font-medium">
               Facturation Électronique
             </Link>
             <span className="text-slate-300">•</span>
-            <Link to={Page.ERP} className="text-sm text-blue-600 hover:underline font-medium">
+            <Link to={Page.ERP} className="text-sm text-primary-500 hover:underline font-medium">
               Solutions ERP
             </Link>
             <span className="text-slate-300">•</span>
-            <Link to={Page.Contact} className="text-sm text-blue-600 hover:underline font-medium">
+            <Link to={Page.Contact} className="text-sm text-primary-500 hover:underline font-medium">
               Contact
             </Link>
           </div>

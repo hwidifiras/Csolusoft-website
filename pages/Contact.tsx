@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">Parlons de <span className="text-blue-600">votre projet.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6">Parlons de <span className="text-primary-500">votre projet.</span></h1>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
               Besoin d'un audit, d'un devis ou simplement de conseils ? Notre équipe d'experts est à votre écoute.
             </p>
@@ -123,7 +123,7 @@ const Contact: React.FC = () => {
                          name="name"
                          value={formData.name}
                          onChange={handleChange}
-                         className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-blue-500'} focus:ring-2 outline-none transition-all`}
+                         className={`w-full px-4 py-3 rounded-xl border ${errors.name ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-400'} focus:ring-2 outline-none transition-all`}
                          placeholder="Jean Dupont" 
                        />
                        {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -136,7 +136,7 @@ const Contact: React.FC = () => {
                          name="company"
                          value={formData.company}
                          onChange={handleChange}
-                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all" 
+                         className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary-400 outline-none transition-all" 
                          placeholder="Société SAS" 
                        />
                     </div>
@@ -149,7 +149,7 @@ const Contact: React.FC = () => {
                        name="email"
                        value={formData.email}
                        onChange={handleChange}
-                       className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-blue-500'} focus:ring-2 outline-none transition-all`}
+                       className={`w-full px-4 py-3 rounded-xl border ${errors.email ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-400'} focus:ring-2 outline-none transition-all`}
                        placeholder="jean@entreprise.com" 
                      />
                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
@@ -161,7 +161,7 @@ const Contact: React.FC = () => {
                        name="subject"
                        value={formData.subject}
                        onChange={handleChange}
-                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                       className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary-400 outline-none transition-all"
                      >
                         <option value="Facturation Électronique">Facturation Électronique</option>
                         <option value="ERP / CRM">ERP / CRM</option>
@@ -178,7 +178,7 @@ const Contact: React.FC = () => {
                        name="message"
                        value={formData.message}
                        onChange={handleChange}
-                       className={`w-full px-4 py-3 rounded-xl border ${errors.message ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-blue-500'} focus:ring-2 outline-none transition-all`}
+                       className={`w-full px-4 py-3 rounded-xl border ${errors.message ? 'border-red-400 focus:ring-red-500' : 'border-slate-200 focus:ring-primary-400'} focus:ring-2 outline-none transition-all`}
                        placeholder="Comment pouvons-nous vous aider ?"
                      ></textarea>
                      {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
@@ -186,7 +186,7 @@ const Contact: React.FC = () => {
                   <button 
                     type="submit" 
                     disabled={status === 'submitting'}
-                    className="w-full py-4 bg-blue-600 text-white rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-blue-700 transition-all shadow-lg shadow-blue-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-4 bg-accent-500 text-white rounded-xl font-bold flex items-center justify-center space-x-2 hover:bg-accent-600 transition-all shadow-lg shadow-accent-200 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                      {status === 'submitting' ? (
                        <>
@@ -208,7 +208,7 @@ const Contact: React.FC = () => {
                <div className="space-y-12">
                   <div className="flex items-start space-x-6">
                      <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0">
-                        <Mail className="w-6 h-6 text-blue-600" />
+                        <Mail className="w-6 h-6 text-primary-500" />
                      </div>
                      <div>
                         <h4 className="text-xl font-bold mb-2">Email</h4>
@@ -218,7 +218,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="flex items-start space-x-6">
                      <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0">
-                        <Phone className="w-6 h-6 text-blue-600" />
+                        <Phone className="w-6 h-6 text-primary-500" />
                      </div>
                      <div>
                         <h4 className="text-xl font-bold mb-2">Téléphone</h4>
@@ -228,7 +228,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div className="flex items-start space-x-6">
                      <div className="w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center shrink-0">
-                        <MapPin className="w-6 h-6 text-blue-600" />
+                        <MapPin className="w-6 h-6 text-primary-500" />
                      </div>
                      <div>
                         <h4 className="text-xl font-bold mb-2">Bureaux</h4>
@@ -237,17 +237,22 @@ const Contact: React.FC = () => {
                   </div>
                </div>
 
-               <div className="mt-16 p-8 bg-slate-900 rounded-[2.5rem] text-white">
+               <div className="mt-16 p-8 bg-dark-900 rounded-[2.5rem] text-white">
                   <div className="flex items-center space-x-4 mb-6">
-                     <Calendar className="w-8 h-8 text-blue-400" />
+                     <Calendar className="w-8 h-8 text-primary-300" />
                      <h4 className="text-2xl font-bold">Un rendez-vous ?</h4>
                   </div>
                   <p className="text-slate-400 mb-8 leading-relaxed">
                      Planifiez un appel de 15 minutes avec l'un de nos consultants pour une pré-analyse gratuite de votre besoin.
                   </p>
-                  <button className="w-full py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-blue-50 transition-all">
+                  <a 
+                     href="https://calendly.com" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="block w-full py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-primary-50 transition-all text-center"
+                  >
                      Réserver un créneau
-                  </button>
+                  </a>
                </div>
             </div>
           </div>
