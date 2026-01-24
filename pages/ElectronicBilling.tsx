@@ -28,16 +28,12 @@ const ElectronicBilling: React.FC = () => {
               <span>Obtenez votre solution</span>
               <ArrowRight className="w-5 h-5 animate-bounce-x" />
             </Link>
-            <a 
-              href="#solutions" 
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('solutions')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="px-10 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all"
+            <Link 
+              to={Page.BillingGuide}
+              className="px-10 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2"
             >
-              Découvrir nos offres
-            </a>
+              <span>📚 Guide complet</span>
+            </Link>
           </div>
         </div>
       </section>
@@ -55,6 +51,10 @@ const ElectronicBilling: React.FC = () => {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Dans le cadre de la modernisation fiscale, la Tunisie impose progressivement la facturation électronique conforme au format <strong>TEIF</strong>.
             </p>
+            <Link to={Page.BillingGuide} className="inline-flex items-center space-x-2 text-blue-600 font-semibold mt-4 hover:underline">
+              <span>En savoir plus sur la réglementation</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">

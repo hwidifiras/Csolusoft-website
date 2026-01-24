@@ -1,6 +1,7 @@
 
-import React, { useEffect, Suspense, lazy } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect, Suspense, lazy, useState } from 'react';
+import { Routes, Route, useLocation, Link } from 'react-router-dom';
+import { BookOpen, X } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import { Page } from './types';
@@ -12,6 +13,9 @@ const DevSurMesure = lazy(() => import('./pages/DevSurMesure'));
 const AI = lazy(() => import('./pages/AI'));
 const Services = lazy(() => import('./pages/Services'));
 const ElectronicBilling = lazy(() => import('./pages/ElectronicBilling'));
+const BillingGuide = lazy(() => import('./pages/BillingGuide'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -28,6 +32,10 @@ const PageLoader: React.FC = () => (
 
 const App: React.FC = () => {
   const { pathname } = useLocation();
+  const [showBlogTooltip, setShowBlogTooltip] = useState(false);
+
+  // Hide blog button on blog pages
+  const isBlogPage = pathname.startsWith('/blog');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -45,6 +53,9 @@ const App: React.FC = () => {
             <Route path={Page.AI} element={<AI />} />
             <Route path={Page.Services} element={<Services />} />
             <Route path={Page.Billing} element={<ElectronicBilling />} />
+            <Route path={Page.BillingGuide} element={<BillingGuide />} />
+            <Route path={Page.Blog} element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path={Page.About} element={<About />} />
             <Route path={Page.Contact} element={<Contact />} />
             <Route path="*" element={<NotFound />} />
@@ -52,6 +63,36 @@ const App: React.FC = () => {
         </Suspense>
       </main>
       <Footer />
+
+      {/* Floating Blog Button */}
+      {!isBlogPage && (
+        <div className="fixed bottom-6 left-6 z-50">
+          <div 
+            className="relative"
+            onMouseEnter={() => setShowBlogTooltip(true)}
+            onMouseLeave={() => setShowBlogTooltip(false)}
+          >
+            {/* Tooltip */}
+            {showBlogTooltip && (
+              <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
+                <div className="bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-lg">
+                  📚 Découvrez notre blog
+                  <div className="absolute top-full left-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-slate-900"></div>
+                </div>
+              </div>
+            )}
+            
+            {/* Button */}
+            <Link
+              to={Page.Blog}
+              className="flex items-center space-x-2 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-5 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+            >
+              <BookOpen className="w-5 h-5" />
+              <span className="font-semibold">Blog</span>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

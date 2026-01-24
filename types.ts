@@ -22,6 +22,8 @@ export enum Page {
   AI = '/intelligence-artificielle',
   Services = '/services',
   Billing = '/facturation-electronique',
+  BillingGuide = '/guide-facturation-electronique',
+  Blog = '/blog',
   About = '/a-propos',
   Contact = '/contact'
 }

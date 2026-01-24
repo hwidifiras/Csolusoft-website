@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
               to={Page.Contact}
               className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-600 transition-all flex items-center space-x-2"
             >
-              <span>Audit Gratuit</span>
+              <span>Devis Gratuit</span>
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>

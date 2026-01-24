@@ -100,8 +100,8 @@ const Home: React.FC = () => {
                     <span>Découvrir nos offres</span>
                     <ArrowRight className="w-5 h-5" />
                   </Link>
-                  <Link to={Page.Contact} className="inline-flex items-center justify-center space-x-3 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
-                    <span>Nous contacter</span>
+                  <Link to={Page.BillingGuide} className="inline-flex items-center justify-center space-x-3 bg-white/10 border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                    <span>📚 Guide complet</span>
                   </Link>
                 </div>
               </div>
