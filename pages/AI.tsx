@@ -73,22 +73,22 @@ const AI: React.FC = () => {
                     Demander une étude de cas
                  </Link>
               </div>
-              <div className="lg:w-1/2 grid grid-cols-2 gap-6">
-                 <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                    <div className="text-3xl font-black mb-2">+40%</div>
-                    <p className="text-sm text-slate-400">Productivité administrative</p>
+              <div className="lg:w-1/2 w-full grid grid-cols-2 gap-4 sm:gap-6">
+                 <div className="bg-white/5 border border-white/10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl">
+                    <div className="text-2xl sm:text-3xl font-black mb-2">+40%</div>
+                    <p className="text-xs sm:text-sm text-slate-400">Productivité administrative</p>
                  </div>
-                 <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                    <div className="text-3xl font-black mb-2">-25%</div>
-                    <p className="text-sm text-slate-400">Erreurs de saisie</p>
+                 <div className="bg-white/5 border border-white/10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl">
+                    <div className="text-2xl sm:text-3xl font-black mb-2">-25%</div>
+                    <p className="text-xs sm:text-sm text-slate-400">Erreurs de saisie</p>
                  </div>
-                 <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                    <div className="text-3xl font-black mb-2">99.9%</div>
-                    <p className="text-sm text-slate-400">Précision des modèles</p>
+                 <div className="bg-white/5 border border-white/10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl">
+                    <div className="text-2xl sm:text-3xl font-black mb-2">99.9%</div>
+                    <p className="text-xs sm:text-sm text-slate-400">Précision des modèles</p>
                  </div>
-                 <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-                    <div className="text-3xl font-black mb-2">2x</div>
-                    <p className="text-sm text-slate-400">Rapidité d'analyse</p>
+                 <div className="bg-white/5 border border-white/10 p-4 sm:p-8 rounded-2xl sm:rounded-3xl">
+                    <div className="text-2xl sm:text-3xl font-black mb-2">2x</div>
+                    <p className="text-xs sm:text-sm text-slate-400">Rapidité d'analyse</p>
                  </div>
               </div>
            </div>

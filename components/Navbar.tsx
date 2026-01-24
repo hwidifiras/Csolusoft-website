@@ -27,11 +27,13 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
             <Link to={Page.Home} className="flex items-center group" aria-label="CSoluSoft - Accueil">
-              <img 
-                src={theme === 'dark' ? "/img/solusoft-logo-navbar-dark.svg" : "/img/solusoft-logo-navbar-light.svg"}
-                alt="CSoluSoft Logo" 
-                className="h-12 w-auto group-hover:scale-105 transition-transform"
-              />
+                <img 
+                  src={theme === 'dark' ? "/img/solusoft-logo-navbar-dark.svg" : "/img/solusoft-logo-navbar-light.svg"}
+                  alt="CSoluSoft Logo" 
+                  className={
+                    `solusoft-logo-navbar ${theme === 'dark' ? 'logo-dark' : 'logo-light'} h-8 w-auto max-w-[100px] max-h-12 group-hover:scale-105 transition-transform`
+                  }
+                />
             </Link>
           </div>
 
