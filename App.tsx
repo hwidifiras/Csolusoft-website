@@ -49,7 +49,7 @@ const AppContent: React.FC = () => {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path={Page.Home} element={<Home />} />
-            <Route path={Page.ERP} element={<ERP />} />
+            {/* <Route path={Page.ERP} element={<ERP />} /> */}
             <Route path={Page.Dev} element={<DevSurMesure />} />
             <Route path={Page.AI} element={<AI />} />
             <Route path={Page.Services} element={<Services />} />
@@ -68,7 +68,7 @@ const AppContent: React.FC = () => {
       {/* Floating Blog Button */}
       {!isBlogPage && (
         <div className="fixed bottom-6 left-6 z-50">
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setShowBlogTooltip(true)}
             onMouseLeave={() => setShowBlogTooltip(false)}
@@ -77,12 +77,12 @@ const AppContent: React.FC = () => {
             {showBlogTooltip && (
               <div className="absolute bottom-full left-0 mb-3 whitespace-nowrap">
                 <div className="bg-dark-900 text-white text-sm font-medium px-4 py-2 rounded-lg shadow-lg">
-                  📚 Découvrez notre blog
+                  Découvrez notre blog
                   <div className="absolute top-full left-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-dark-900"></div>
                 </div>
               </div>
             )}
-            
+
             {/* Button */}
             <Link
               to={Page.Blog}

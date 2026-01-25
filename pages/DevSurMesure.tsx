@@ -1,11 +1,12 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
+import {
   Code2, Workflow, Lightbulb, Settings2, ShieldCheck, HeartHandshake,
-  MessageSquare, FileSearch, Palette, Layers, TestTube, Rocket, 
+  MessageSquare, FileSearch, Palette, Layers, TestTube, Rocket,
   LifeBuoy, ArrowRight, CheckCircle2, Clock, Users, Zap, Target,
-  GitBranch, Database, Globe, Smartphone, Monitor, Server
+  GitBranch, Database, Globe, Smartphone, Monitor, Server,
+  BarChart3, LayoutDashboard, LineChart, Table, MessageCircle
 } from 'lucide-react';
 import { Page } from '../types';
 import SEO from '../components/SEO';
@@ -169,7 +170,7 @@ const DevSurMesure: React.FC = () => {
 
   return (
     <div className="bg-white dark:bg-dark-900 transition-colors">
-      <SEO 
+      <SEO
         title="Développement Sur Mesure"
         description="Développement de logiciels sur mesure en Tunisie. Applications web, mobiles et desktop taillées pour vos besoins spécifiques. De l'analyse à la maintenance."
         keywords="développement sur mesure, application web, application mobile, logiciel desktop, Tunisie, développeur"
@@ -181,25 +182,25 @@ const DevSurMesure: React.FC = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0YzAtMi4yIDEuOC00IDQtNHM0IDEuOCA0IDQtMS44IDQtNCA0LTQtMS44LTQtNHoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-50"></div>
         <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute -top-32 -right-32 w-96 h-96 bg-accent-400/20 rounded-full blur-3xl"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur border border-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold mb-8">
               <Code2 className="w-4 h-4" />
               <span>Solutions logicielles personnalisées</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight">
               Développement<br />
               <span className="text-primary-100">Sur Mesure.</span>
             </h1>
-            
+
             <p className="text-xl text-primary-50 max-w-3xl mx-auto mb-10 leading-relaxed">
-              Parce que votre entreprise est unique, vos logiciels doivent l'être aussi. 
-              Nous créons des solutions <strong className="text-white">taillées pour vos besoins spécifiques</strong>, 
+              Parce que votre entreprise est unique, vos logiciels doivent l'être aussi.
+              Nous créons des solutions <strong className="text-white">taillées pour vos besoins spécifiques</strong>,
               de l'idée initiale jusqu'à la maintenance continue.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to={Page.Contact} className="px-8 py-4 bg-white text-primary-600 rounded-2xl font-bold hover:bg-primary-50 transition-all shadow-lg flex items-center justify-center space-x-2">
                 <span>Discuter de mon projet</span>
@@ -237,42 +238,158 @@ const DevSurMesure: React.FC = () => {
         </div>
       </section>
 
-      {/* Project Types */}
+      {/* Platform Choices Section - from ERP */}
+      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <span className="inline-block bg-accent-50 dark:bg-accent-500/20 text-accent-600 dark:text-accent-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
+              Multi-plateforme
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+              Votre application, <span className="text-primary-500 dark:text-accent-400">partout.</span>
+            </h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Selon vos contraintes techniques et usages, nous développons sur la plateforme idéale pour votre activité.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Application Web",
+                subtitle: "Accessible partout",
+                icon: <Globe className="w-10 h-10" />,
+                description: "Interface web responsive et sécurisée. Idéal pour le SaaS, les portails clients et la gestion à distance.",
+                features: ["Zero installation", "Multi-navigateur", "Mises à jour instantanées", "PWA (Progressive Web App)"],
+                gradient: "from-primary-500 to-primary-600"
+              },
+              {
+                title: "Application Mobile",
+                subtitle: "iOS & Android",
+                icon: <Smartphone className="w-10 h-10" />,
+                description: "Applications natives pour le terrain. Offrez une expérience fluide à vos équipes mobiles et clients.",
+                features: ["Mode hors-ligne", "Notifications push", "Utilisation caméra/GPS", "Signature sur écran"],
+                gradient: "from-accent-500 to-primary-500"
+              },
+              {
+                title: "Logiciel Desktop",
+                subtitle: "Windows, Mac, Linux",
+                icon: <Monitor className="w-10 h-10" />,
+                description: "Performance brute pour les tâches intensives. Connexion directe aux machines et périphériques matériels.",
+                features: ["Performance maximale", "Raccourcis clavier", "Gestion locale fichiers", "Connexion périphériques USB/Série"],
+                gradient: "from-dark-700 to-dark-900"
+              }
+            ].map((platform, i) => (
+              <div key={i} className="group relative bg-white dark:bg-dark-800 rounded-3xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div className={`h-48 bg-gradient-to-br ${platform.gradient} flex items-center justify-center text-white relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all"></div>
+                  <div className="relative z-10 text-center">
+                    <div className="w-20 h-20 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                      {platform.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold">{platform.title}</h3>
+                    <p className="text-white/80 text-sm">{platform.subtitle}</p>
+                  </div>
+                </div>
+                <div className="p-8">
+                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">{platform.description}</p>
+                  <ul className="space-y-3">
+                    {platform.features.map((feature, j) => (
+                      <li key={j} className="flex items-center space-x-3 text-sm">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 dark:text-green-400 shrink-0" />
+                        <span className="text-slate-700 dark:text-slate-200">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Systèmes complexes Section - Replacement for Project Types */}
       <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
-              Types de projets
+              Expertise Métier
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Ce que nous <span className="text-primary-500 dark:text-accent-400">développons.</span>
+              Systèmes de Gestion <span className="text-primary-500 dark:text-accent-400">Sur Mesure.</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Quel que soit votre besoin, nous avons l'expertise pour le concrétiser.
+              Nous concevons des outils de gestion puissants, capables de remplacer ou de compléter un ERP standard, exactement calibrés pour votre métier.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projectTypes.map((project, i) => (
-              <div key={i} className="group bg-white dark:bg-dark-700 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-600 hover:shadow-2xl transition-all">
-                <div className={`h-32 bg-gradient-to-br ${project.gradient} flex items-center justify-center text-white`}>
-                  <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {project.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Gestion de Stock & Logistique",
+                desc: "Suivi temps réel, inventaires tournants, gestion multi-dépôts et expéditions.",
+                icon: <Database className="w-8 h-8" />,
+                tags: ["Traceabilité", "QR Codes", "Alertes"]
+              },
+              {
+                title: "CRM & Gestion Commerciale",
+                desc: "De la prospection à la facturation. Suivi des opportunités et pipe commercial.",
+                icon: <Users className="w-8 h-8" />,
+                tags: ["Pipeline", "Devis", "Factures"]
+              },
+              {
+                title: "Finance & Comptabilité",
+                desc: "Tableaux de bord financiers, suivi des dépenses, intégration bancaire et déclarations.",
+                icon: <LineChart className="w-8 h-8" />,
+                tags: ["Trésorerie", "Bilan", "Rapprochement"]
+              },
+              {
+                title: "Production (GPAO)",
+                desc: "Ordres de fabrication, nomenclatures, planification et suivi qualité.",
+                icon: <Settings2 className="w-8 h-8" />,
+                tags: ["Planning", "Coûts", "Qualité"]
+              },
+              {
+                title: "Ressources Humaines (SIRH)",
+                desc: "Portail employé, gestion des congés, notes de frais et évaluations.",
+                icon: <HeartHandshake className="w-8 h-8" />,
+                tags: ["Paie", "Congés", "Onboarding"]
+              },
+              {
+                title: "Reporting & BI",
+                desc: "Centralisation des données et visualisation interactive pour la décision.",
+                icon: <LayoutDashboard className="w-8 h-8" />,
+                tags: ["KPIs", "Export", "Prévisions"]
+              }
+            ].map((system, i) => (
+              <div key={i} className="group bg-white dark:bg-dark-700 p-8 rounded-3xl border border-slate-200 dark:border-slate-600 hover:shadow-xl hover:border-primary-200 dark:hover:border-primary-500/30 transition-all">
+                <div className="w-16 h-16 bg-primary-50 dark:bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:scale-110 transition-all">
+                  <div className="text-primary-500 dark:text-primary-400 group-hover:text-white transition-colors">
+                    {system.icon}
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{project.title}</h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.examples.map((example, j) => (
-                      <span key={j} className="text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-dark-600 px-3 py-1 rounded-full">
-                        {example}
-                      </span>
-                    ))}
-                  </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{system.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">{system.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {system.tags.map((tag, j) => (
+                    <span key={j} className="text-xs font-medium text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-500/20 px-3 py-1 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-16 bg-slate-100 dark:bg-dark-700 rounded-3xl p-8 md:p-12 text-center">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Pourquoi développer votre propre système ?</h3>
+            <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8">
+              Contrairement aux ERP standards coûteux et rigides, une solution sur mesure s'adapte à 100% à vos processus, sans fonctionnalités superflues, et évolue à votre rythme. Pas de licence par utilisateur, le logiciel vous appartient.
+            </p>
+            <Link to={Page.Contact} className="inline-flex items-center space-x-2 bg-primary-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-white hover:text-primary-600 hover:shadow-white/20 hover:shadow-lg transition-all border-2 border-transparent hover:border-primary-100">
+              <span>Étudier mon besoin ERP</span>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>
@@ -288,7 +405,7 @@ const DevSurMesure: React.FC = () => {
               Comment se déroule <span className="text-primary-500 dark:text-accent-400">votre projet ?</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Du premier contact jusqu'à la mise en production, voici les étapes clés de notre collaboration. 
+              Du premier contact jusqu'à la mise en production, voici les étapes clés de notre collaboration.
               <strong className="text-slate-800 dark:text-white"> Transparence totale sur le processus.</strong>
             </p>
           </div>
@@ -301,7 +418,7 @@ const DevSurMesure: React.FC = () => {
             <div className="space-y-12 lg:space-y-24">
               {projectPhases.map((phase, i) => (
                 <div key={i} className={`relative flex flex-col lg:flex-row items-center gap-8 ${i % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  
+
                   {/* Phase indicator (center on desktop) */}
                   <div className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 z-10">
                     <div className={`w-16 h-16 ${phase.color} rounded-2xl flex items-center justify-center text-white shadow-lg`}>
@@ -518,20 +635,21 @@ const DevSurMesure: React.FC = () => {
             Décrivez-nous votre projet. Nous vous recontactons sous 24h avec une première analyse et un devis estimatif gratuit.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link 
+            <Link
               to={Page.Contact}
               className="px-10 py-5 bg-white text-primary-600 rounded-2xl font-bold text-lg hover:bg-primary-50 transition-all shadow-xl flex items-center justify-center space-x-2"
             >
               <span>Démarrer mon projet</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="https://wa.me/21658874825"
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-5 bg-white/10 text-white border border-white/30 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2"
             >
-              <span>💬 WhatsApp direct</span>
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
             </a>
           </div>
           <p className="text-primary-200 text-sm mt-8">

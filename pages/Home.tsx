@@ -1,15 +1,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle, BarChart3, Globe, Laptop, Smartphone, Monitor, BrainCircuit, MessageCircle, Cloud } from 'lucide-react';
 import { Page } from '../types';
-import { ERP_FEATURES } from '../constants';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="overflow-hidden bg-white dark:bg-dark-900 transition-colors">
-      <SEO 
+      <SEO
         title="Accueil"
         description="CSoluSoft - Expert en solutions logicielles sur mesure en Tunisie. Facturation électronique, ERP, développement web/mobile et intelligence artificielle pour propulser votre entreprise."
         keywords="CSoluSoft, facturation électronique Tunisie, ERP Tunisie, logiciel de gestion, développement sur mesure, intelligence artificielle, transformation digitale"
@@ -23,7 +22,7 @@ const Home: React.FC = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            
+
             {/* Left: Content */}
             <div className="flex-1 text-center lg:text-left">
               {/* Alert Badge */}
@@ -40,7 +39,7 @@ const Home: React.FC = () => {
 
               {/* Subtitle */}
               <p className="text-lg text-slate-300 mb-8 max-w-xl">
-                <strong className="text-white">380 000 entreprises</strong> doivent passer au format TEIF. 
+                <strong className="text-white">380 000 entreprises</strong> doivent passer au format TEIF.
                 Conversion automatique ou solution complète — soyez conforme en <strong className="text-accent-400">24h</strong>.
               </p>
 
@@ -67,7 +66,8 @@ const Home: React.FC = () => {
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <a href="https://wa.me/21658874825" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-green-600 text-white rounded-xl font-bold text-lg hover:bg-green-700 transition-all flex items-center justify-center space-x-2">
-                  <span>💬 WhatsApp</span>
+                  <MessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             <div className="flex-1 w-full max-w-md">
               <div className="bg-white/5 backdrop-blur border border-white/10 rounded-3xl p-6">
                 <p className="text-center text-slate-400 text-sm mb-4 font-semibold uppercase tracking-wide">Processus simplifié</p>
-                
+
                 {/* 3 Steps Vertical */}
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4 bg-red-500/10 border border-red-500/20 rounded-xl p-4">
@@ -86,11 +86,11 @@ const Home: React.FC = () => {
                       <p className="text-slate-400 text-sm">PDF, Excel non conformes</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex justify-center text-slate-500">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4 bg-accent-500/10 border border-accent-500/20 rounded-xl p-4">
                     <div className="w-10 h-10 bg-accent-500/20 rounded-lg flex items-center justify-center text-accent-400 font-bold">2</div>
                     <div>
@@ -98,11 +98,11 @@ const Home: React.FC = () => {
                       <p className="text-slate-400 text-sm">Conversion automatique</p>
                     </div>
                   </div>
-                  
+
                   <div className="flex justify-center text-slate-500">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
                   </div>
-                  
+
                   <div className="flex items-center space-x-4 bg-green-500/10 border border-green-500/20 rounded-xl p-4">
                     <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center text-green-400 font-bold">✓</div>
                     <div>
@@ -117,31 +117,155 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Solutions ERP Summary */}
-      <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
+      {/* Services Sur Mesure */}
+      <section className="py-20 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">Nos Solutions ERP</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Une architecture modulaire qui s'adapte à vos besoins spécifiques. Ne payez que pour ce que vous utilisez.
+            <span className="text-primary-500 dark:text-accent-400 font-bold tracking-wider uppercase text-sm">Notre Expertise</span>
+            <h2 className="mt-2 text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white">
+              Développement <span className="text-primary-500 dark:text-accent-400">Sur Mesure</span>
+            </h2>
+            <p className="mt-4 text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+              Des solutions technologiques adaptées à vos besoins spécifiques pour propulser votre activité.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {ERP_FEATURES.map((feature, idx) => (
-              <div key={idx} className="group p-8 rounded-3xl border border-slate-100 dark:border-slate-700 bg-slate-50 dark:bg-dark-800 hover:bg-white dark:hover:bg-dark-700 hover:shadow-2xl hover:border-primary-100 dark:hover:border-primary-500/30 transition-all">
-                <div className="w-12 h-12 bg-white dark:bg-dark-700 rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{feature.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                  {feature.description}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Systèmes de Gestion",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform duration-300"><BarChart3 className="w-7 h-7" /></div>,
+                desc: "ERP, CRM et tableaux de bord personnalisés pour optimiser vos processus internes.",
+                tags: ["Dashboards", "KPIs", "Suivi"]
+              },
+              {
+                title: "Sites Web Pro",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform duration-300"><Globe className="w-7 h-7" /></div>,
+                desc: "Vitrines digitales performantes, SEO-friendly et design moderne pour votre marque.",
+                tags: ["Vitrine", "E-commerce", "Portfolio"]
+              },
+              {
+                title: "Applications Web",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-pink-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/30 group-hover:scale-110 transition-transform duration-300"><Laptop className="w-7 h-7" /></div>,
+                desc: "Solutions SaaS et plateformes web complexes accessibles partout.",
+                tags: ["SaaS", "React", "Cloud"]
+              },
+              {
+                title: "Applications Mobile",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300"><Smartphone className="w-7 h-7" /></div>,
+                desc: "Apps iOS et Android natives ou hybrides pour toucher vos clients sur mobile.",
+                tags: ["iOS", "Android", "Flutter"]
+              },
+              {
+                title: "Software Desktop",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-teal-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/30 group-hover:scale-110 transition-transform duration-300"><Monitor className="w-7 h-7" /></div>,
+                desc: "Logiciels de bureau robustes pour les environnements de travail exigeants.",
+                tags: ["Windows", "Electron", "Sécurité"]
+              },
+              {
+                title: "Modules AI",
+                icon: <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-indigo-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-indigo-500/30 group-hover:scale-110 transition-transform duration-300"><BrainCircuit className="w-7 h-7" /></div>,
+                desc: "Intégration d'intelligence artificielle pour automatiser et prédire.",
+                tags: ["NLP", "Vision", "Prédiction"]
+              }
+            ].map((service, idx) => (
+              <div key={idx} className="bg-white dark:bg-dark-900 mx-auto w-full p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-dark-700 group">
+                {service.icon}
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-500 transition-colors">{service.title}</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
+                  {service.desc}
                 </p>
-                <Link to={Page.ERP} className="text-primary-500 dark:text-accent-400 font-bold text-sm flex items-center group/link">
-                  En savoir plus
-                  <ArrowRight className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform" />
-                </Link>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag, i) => (
+                    <span key={i} className="px-2 py-1 bg-slate-100 dark:bg-dark-800 text-xs font-medium text-slate-500 dark:text-slate-400 rounded-md">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Automation & Cloud Section */}
+      <section className="py-24 bg-white dark:bg-dark-900 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="lg:w-1/2 order-2 lg:order-1">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl transform rotate-3 blur-lg opacity-30"></div>
+                <div className="relative bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-2xl">
+                  {/* Mockup visual for automation */}
+                  <div className="flex items-center space-x-4 mb-8">
+                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                    <div className="text-xs text-slate-500 font-mono ml-4">workflow.n8n</div>
+                  </div>
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                      <div className="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center">📧</div>
+                      <div className="flex-1">
+                        <div className="h-2 w-24 bg-slate-600 rounded mb-2"></div>
+                        <div className="h-1.5 w-full bg-slate-700 rounded"></div>
+                      </div>
+                      <div className="text-xs text-slate-500">Trigger</div>
+                    </div>
+                    <div className="flex justify-center -my-2">
+                      <div className="w-0.5 h-6 bg-slate-700"></div>
+                    </div>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                      <div className="w-10 h-10 bg-pink-500/20 text-pink-400 rounded-lg flex items-center justify-center">🧠</div>
+                      <div className="flex-1">
+                        <div className="h-2 w-32 bg-slate-600 rounded mb-2"></div>
+                        <div className="h-1.5 w-3/4 bg-slate-700 rounded"></div>
+                      </div>
+                      <div className="text-xs text-slate-500">Process AI</div>
+                    </div>
+                    <div className="flex justify-center -my-2">
+                      <div className="w-0.5 h-6 bg-slate-700"></div>
+                    </div>
+                    <div className="flex items-center space-x-4 p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                      <div className="w-10 h-10 bg-green-500/20 text-green-400 rounded-lg flex items-center justify-center"><Cloud className="w-5 h-5" /></div>
+                      <div className="flex-1">
+                        <div className="h-2 w-20 bg-slate-600 rounded mb-2"></div>
+                        <div className="h-1.5 w-full bg-slate-700 rounded"></div>
+                      </div>
+                      <div className="text-xs text-slate-500">Cloud Save</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="lg:w-1/2 order-1 lg:order-2">
+              <div className="inline-flex items-center space-x-2 bg-blue-500/10 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-sm font-medium mb-6">
+                <Zap className="w-4 h-4" />
+                <span>Gain de productivité x10</span>
+              </div>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
+                Automatisation & <br /> Infrastructures Cloud
+              </h2>
+              <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
+                Connectez vos applications favorites et automatisez vos tâches répétitives. Nous déployons des workflows intelligents via <strong className="text-slate-900 dark:text-white">n8n</strong> et sécurisons vos données sur le Cloud.
+              </p>
+
+              <div className="grid grid-cols-2 gap-6 mb-10">
+                <div className="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:border-blue-500 transition-colors">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Workflows n8n</h4>
+                  <p className="text-sm text-slate-500">Orchestration de tâches complexes sans code.</p>
+                </div>
+                <div className="border border-slate-200 dark:border-slate-700 p-4 rounded-xl hover:border-cyan-500 transition-colors">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-1">Cloud Scalable</h4>
+                  <p className="text-sm text-slate-500">AWS, Google Cloud ou Azure selon vos besoins.</p>
+                </div>
+              </div>
+
+              <a href="#contact" className="group inline-flex items-center space-x-3 text-blue-600 dark:text-blue-400 font-bold text-lg hover:text-blue-700 transition-colors">
+                <span>Démarrer l'automatisation</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -175,39 +299,39 @@ const Home: React.FC = () => {
               </Link>
             </div>
             <div className="lg:w-1/2 relative">
-               <div className="relative z-10 bg-white dark:bg-dark-700 p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-600">
-                  <div className="flex items-center space-x-4 mb-8">
-                    <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white">
-                      <Cpu className="w-6 h-6" />
+              <div className="relative z-10 bg-white dark:bg-dark-700 p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-600">
+                <div className="flex items-center space-x-4 mb-8">
+                  <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white">
+                    <Cpu className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white">CSoluBrain™ v2.0</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Moteur d'intelligence logicielle actif</p>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">Optimisation Stock</span>
+                      <span className="text-sm text-green-600 dark:text-green-400">+12.4%</span>
                     </div>
-                    <div>
-                      <h4 className="font-bold text-slate-900 dark:text-white">CSoluBrain™ v2.0</h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Moteur d'intelligence logicielle actif</p>
+                    <div className="w-full h-2 bg-slate-200 dark:bg-dark-500 rounded-full overflow-hidden">
+                      <div className="w-[85%] h-full bg-primary-500 rounded-full"></div>
                     </div>
                   </div>
-                  <div className="space-y-6">
-                    <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-bold text-slate-900 dark:text-white">Optimisation Stock</span>
-                        <span className="text-sm text-green-600 dark:text-green-400">+12.4%</span>
-                      </div>
-                      <div className="w-full h-2 bg-slate-200 dark:bg-dark-500 rounded-full overflow-hidden">
-                        <div className="w-[85%] h-full bg-primary-500 rounded-full"></div>
-                      </div>
+                  <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                    <div className="flex justify-between mb-2">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">Efficacité Logistique</span>
+                      <span className="text-sm text-primary-500 dark:text-accent-400">En cours</span>
                     </div>
-                    <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-bold text-slate-900 dark:text-white">Efficacité Logistique</span>
-                        <span className="text-sm text-primary-500 dark:text-accent-400">En cours</span>
-                      </div>
-                      <div className="flex space-x-1">
-                        {[1,2,3,4,5,6,7,8].map(i => <div key={i} className="h-6 w-full bg-accent-100 dark:bg-accent-500/20 rounded animate-pulse" style={{animationDelay: `${i*0.1}s`}}></div>)}
-                      </div>
+                    <div className="flex space-x-1">
+                      {[1, 2, 3, 4, 5, 6, 7, 8].map(i => <div key={i} className="h-6 w-full bg-accent-100 dark:bg-accent-500/20 rounded animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>)}
                     </div>
                   </div>
-               </div>
-               {/* Decorators */}
-               <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-primary-500 rounded-[3rem] -z-0 rotate-12"></div>
+                </div>
+              </div>
+              {/* Decorators */}
+              <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-primary-500 rounded-[3rem] -z-0 rotate-12"></div>
             </div>
           </div>
         </div>
@@ -219,21 +343,21 @@ const Home: React.FC = () => {
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-12">Secteurs d'activité</h2>
             <div className="flex flex-wrap justify-center gap-6 md:gap-10">
-               {[
-                 { name: 'Industrie', icon: '🏭' },
-                 { name: 'Commerce', icon: '🛒' },
-                 { name: 'Santé', icon: '🏥' },
-                 { name: 'Finance', icon: '🏦' },
-                 { name: 'Services', icon: '💼' }
-               ].map((sector, i) => (
-                 <div key={i} className="flex flex-col items-center p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
-                   <span className="text-4xl mb-2 group-hover:scale-110 transition-transform">{sector.icon}</span>
-                   <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">{sector.name}</span>
-                 </div>
-               ))}
+              {[
+                { name: 'Industrie', icon: '🏭' },
+                { name: 'Commerce', icon: '🛒' },
+                { name: 'Santé', icon: '🏥' },
+                { name: 'Finance', icon: '🏦' },
+                { name: 'Services', icon: '💼' }
+              ].map((sector, i) => (
+                <div key={i} className="flex flex-col items-center p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
+                  <span className="text-4xl mb-2 group-hover:scale-110 transition-transform">{sector.icon}</span>
+                  <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">{sector.name}</span>
+                </div>
+              ))}
             </div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-24">
             <div className="text-center space-y-4 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
               <div className="text-5xl font-black text-primary-500 dark:text-accent-400 group-hover:scale-110 transition-transform">500+</div>
@@ -255,23 +379,24 @@ const Home: React.FC = () => {
       <section className="py-24 bg-white dark:bg-dark-800 transition-colors">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-dark-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
-             <div className="relative z-10">
-               <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">Prêt à transformer votre entreprise ?</h2>
-               <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-                 Discutons de votre projet et élaborons ensemble la solution logicielle qui répondra parfaitement à vos enjeux.
-               </p>
-               <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                 <Link to={Page.Contact} className="px-10 py-5 bg-accent-500 text-white rounded-2xl font-bold text-lg hover:bg-accent-600 transition-all shadow-xl shadow-accent-500/20 flex items-center justify-center space-x-2">
-                   <span>Demander un devis gratuit</span>
-                   <ArrowRight className="w-5 h-5" />
-                 </Link>
-                 <a href="https://wa.me/21658874825" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2">
-                   <span>💬 WhatsApp</span>
-                 </a>
-               </div>
-             </div>
-             {/* Background glow */}
-             <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8">Prêt à transformer votre entreprise ?</h2>
+              <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+                Discutons de votre projet et élaborons ensemble la solution logicielle qui répondra parfaitement à vos enjeux.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <Link to={Page.Contact} className="px-10 py-5 bg-accent-500 text-white rounded-2xl font-bold text-lg hover:bg-accent-600 transition-all shadow-xl shadow-accent-500/20 flex items-center justify-center space-x-2">
+                  <span>Demander un devis gratuit</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <a href="https://wa.me/21658874825" target="_blank" rel="noopener noreferrer" className="px-10 py-5 bg-white/10 text-white border border-white/20 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2">
+                  <MessageCircle className="w-5 h-5" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+            {/* Background glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-500 rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
           </div>
         </div>
       </section>

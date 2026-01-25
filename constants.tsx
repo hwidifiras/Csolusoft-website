@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { 
-  BarChart3, 
-  Code2, 
-  Cpu, 
-  Globe, 
-  Smartphone, 
-  Database, 
-  ShieldCheck, 
+import {
+  BarChart3,
+  Code2,
+  Cpu,
+  Globe,
+  Smartphone,
+  Database,
+  ShieldCheck,
   FileText,
   Workflow,
   LineChart,
@@ -19,7 +19,7 @@ import { NavLink, Page } from './types';
 export const NAV_LINKS: NavLink[] = [
   { label: 'Accueil', href: Page.Home },
   { label: 'Facturation Élec.', href: Page.Billing },
-  { label: 'Solutions ERP', href: Page.ERP },
+  // { label: 'Solutions ERP', href: Page.ERP },
   { label: 'Sur Mesure', href: Page.Dev },
   { label: 'IA', href: Page.AI },
   { label: 'À Propos', href: Page.About },

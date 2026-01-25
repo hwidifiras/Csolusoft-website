@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ShieldCheck, Zap, FileCheck, CheckCircle2, ArrowRight, FileSpreadsheet, FileOutput, Upload, RefreshCw, Package, Clock } from 'lucide-react';
+import { ShieldCheck, Zap, FileCheck, CheckCircle2, ArrowRight, FileSpreadsheet, FileOutput, Upload, RefreshCw, Package, Clock, MessageCircle, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Page } from '../types';
 import SEO from '../components/SEO';
@@ -8,7 +8,7 @@ import SEO from '../components/SEO';
 const ElectronicBilling: React.FC = () => {
   return (
     <div className="bg-white dark:bg-dark-900 transition-colors">
-      <SEO 
+      <SEO
         title="Facturation Électronique"
         description="Solutions de facturation électronique conformes à la loi tunisienne 2026. Convertissez vos factures au format TEIF ou adoptez notre logiciel de facturation complet. Mise en conformité en 24h."
         keywords="facturation électronique Tunisie, TEIF, loi finances 2026, conformité fiscale, facture électronique, conversion facture"
@@ -23,11 +23,11 @@ const ElectronicBilling: React.FC = () => {
             <span className="font-semibold text-sm">Obligation légale en vigueur</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-            Facturation Électronique<br/>
+            Facturation Électronique<br />
             <span className="text-primary-400">Conforme au TEIF</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-            La facturation électronique est désormais <strong className="text-white">obligatoire pour les sociétés de services</strong> et sera bientôt étendue à toutes les entreprises. 
+            La facturation électronique est désormais <strong className="text-white">obligatoire pour les sociétés de services</strong> et sera bientôt étendue à toutes les entreprises.
             Assurez-vous d'être conforme au guide tunisien et au format TEIF.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -35,11 +35,12 @@ const ElectronicBilling: React.FC = () => {
               <span>Obtenez votre solution</span>
               <ArrowRight className="w-5 h-5 animate-bounce-x" />
             </Link>
-            <Link 
+            <Link
               to={Page.BillingGuide}
               className="px-10 py-4 bg-white/10 text-white border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center space-x-2"
             >
-              <span>📚 Guide complet</span>
+              <BookOpen className="w-5 h-5" />
+              <span>Guide complet</span>
             </Link>
           </div>
         </div>
@@ -285,20 +286,21 @@ const ElectronicBilling: React.FC = () => {
             Contactez-nous pour discuter de votre situation et trouver la solution adaptée à vos besoins.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link 
+            <Link
               to={Page.Contact}
               className="px-10 py-4 bg-accent-500 text-white rounded-xl font-bold text-lg hover:bg-accent-600 transition-all shadow-lg flex items-center justify-center space-x-2"
             >
               <span>Contactez-nous</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a 
+            <a
               href="https://wa.me/21658874825"
               target="_blank"
               rel="noopener noreferrer"
               className="px-10 py-4 bg-white dark:bg-dark-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-600 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-dark-600 transition-all flex items-center justify-center space-x-2"
             >
-              <span>💬 WhatsApp</span>
+              <MessageCircle className="w-5 h-5" />
+              <span>WhatsApp</span>
             </a>
           </div>
         </div>
