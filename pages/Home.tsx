@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle, BarChart3, Globe, Laptop, Smartphone, Monitor, BrainCircuit, MessageCircle, Cloud } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle, BarChart3, Globe, Laptop, Smartphone, Monitor, BrainCircuit, MessageCircle, Cloud, Factory, ShoppingCart, HeartPulse, Landmark, Briefcase, ThumbsUp, Headphones } from 'lucide-react';
 import { Page } from '../types';
 import SEO from '../components/SEO';
 
@@ -25,12 +25,6 @@ const Home: React.FC = () => {
 
             {/* Left: Content */}
             <div className="flex-1 text-center lg:text-left">
-              {/* Alert Badge */}
-              <div className="inline-flex items-center space-x-2 bg-red-500/20 border border-red-400/30 text-red-300 px-4 py-2 rounded-full text-sm font-bold mb-6">
-                <AlertTriangle className="w-4 h-4" />
-                <span>Obligation légale 2026</span>
-              </div>
-
               {/* Title */}
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
                 Facturation<br />
@@ -39,8 +33,8 @@ const Home: React.FC = () => {
 
               {/* Subtitle */}
               <p className="text-lg text-slate-300 mb-8 max-w-xl">
-                <strong className="text-white">380 000 entreprises</strong> doivent passer au format TEIF.
-                Conversion automatique ou solution complète — soyez conforme en <strong className="text-accent-400">24h</strong>.
+                La <span className="text-accent-400 font-semibold">nouvelle réglementation</span> impose aux entreprises tunisiennes de passer au format TEIF.
+                Avec CSoluSoft, soyez conforme en <strong className="text-white">24h</strong> — conversion automatique ou solution de facturation complète.
               </p>
 
               {/* Key features */}
@@ -300,16 +294,23 @@ const Home: React.FC = () => {
             </div>
             <div className="lg:w-1/2 relative">
               <div className="relative z-10 bg-white dark:bg-dark-700 p-12 rounded-[2.5rem] shadow-2xl border border-slate-100 dark:border-slate-600">
+                {/* Example Label */}
+                <div className="text-xs font-mono text-slate-400 dark:text-slate-500 mb-4">// exemple</div>
+
+                {/* Header */}
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center text-white">
                     <Cpu className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-900 dark:text-white">CSoluBrain™ v2.0</h4>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Moteur d'intelligence logicielle actif</p>
+                    <h4 className="font-bold text-slate-900 dark:text-white">Module Csolusoft AI</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Intelligence intégrée à vos systèmes</p>
                   </div>
                 </div>
-                <div className="space-y-6">
+
+                {/* Stats Cards */}
+                <div className="space-y-4">
+                  {/* Optimisation Stock */}
                   <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
                     <div className="flex justify-between mb-2">
                       <span className="text-sm font-bold text-slate-900 dark:text-white">Optimisation Stock</span>
@@ -319,10 +320,21 @@ const Home: React.FC = () => {
                       <div className="w-[85%] h-full bg-primary-500 rounded-full"></div>
                     </div>
                   </div>
+
+                  {/* Réduction des Pertes - Money Saved */}
+                  <div className="p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+                    <div className="flex justify-between mb-1">
+                      <span className="text-sm font-bold text-slate-900 dark:text-white">Réduction des Pertes</span>
+                      <span className="text-sm text-green-600 dark:text-green-400 font-bold">-15 000 DT/an</span>
+                    </div>
+                    <p className="text-xs text-green-600 dark:text-green-400">Économies estimées sur l'année</p>
+                  </div>
+
+                  {/* Efficacité Logistique - In Progress */}
                   <div className="p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
                     <div className="flex justify-between mb-2">
                       <span className="text-sm font-bold text-slate-900 dark:text-white">Efficacité Logistique</span>
-                      <span className="text-sm text-primary-500 dark:text-accent-400">En cours</span>
+                      <span className="text-sm text-primary-500 dark:text-accent-400 font-medium">En cours...</span>
                     </div>
                     <div className="flex space-x-1">
                       {[1, 2, 3, 4, 5, 6, 7, 8].map(i => <div key={i} className="h-6 w-full bg-accent-100 dark:bg-accent-500/20 rounded animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>)}
@@ -337,39 +349,48 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Secteurs / Social Proof */}
+      {/* Secteurs d'activité */}
       <section className="py-24 bg-white dark:bg-dark-900 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-12">Secteurs d'activité</h2>
-            <div className="flex flex-wrap justify-center gap-6 md:gap-10">
+            <div className="flex flex-wrap justify-center gap-8 md:gap-12">
               {[
-                { name: 'Industrie', icon: '🏭' },
-                { name: 'Commerce', icon: '🛒' },
-                { name: 'Santé', icon: '🏥' },
-                { name: 'Finance', icon: '🏦' },
-                { name: 'Services', icon: '💼' }
+                { name: 'Industrie', icon: <Factory className="w-8 h-8" /> },
+                { name: 'Commerce', icon: <ShoppingCart className="w-8 h-8" /> },
+                { name: 'Santé', icon: <HeartPulse className="w-8 h-8" /> },
+                { name: 'Finance', icon: <Landmark className="w-8 h-8" /> },
+                { name: 'Services', icon: <Briefcase className="w-8 h-8" /> }
               ].map((sector, i) => (
-                <div key={i} className="flex flex-col items-center p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
-                  <span className="text-4xl mb-2 group-hover:scale-110 transition-transform">{sector.icon}</span>
-                  <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">{sector.name}</span>
+                <div key={i} className="flex flex-col items-center p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
+                  <div className="w-16 h-16 bg-slate-100 dark:bg-dark-700 rounded-2xl flex items-center justify-center text-slate-500 dark:text-slate-400 mb-3 group-hover:bg-primary-50 dark:group-hover:bg-primary-500/20 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-all group-hover:scale-110">
+                    {sector.icon}
+                  </div>
+                  <span className="text-sm font-semibold text-slate-600 dark:text-slate-400 group-hover:text-primary-500 dark:group-hover:text-accent-400 transition-colors">{sector.name}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-24">
-            <div className="text-center space-y-4 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
-              <div className="text-5xl font-black text-primary-500 dark:text-accent-400 group-hover:scale-110 transition-transform">500+</div>
-              <p className="text-slate-600 dark:text-slate-300 font-bold">Entreprises équipées</p>
+          {/* Value Propositions - Honest for a new company */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-3xl mx-auto">
+            <div className="flex items-center space-x-6 p-6 bg-slate-50 dark:bg-dark-800 rounded-2xl">
+              <div className="w-14 h-14 bg-green-100 dark:bg-green-500/20 rounded-2xl flex items-center justify-center text-green-600 dark:text-green-400 shrink-0">
+                <ThumbsUp className="w-7 h-7" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 dark:text-white text-lg">Satisfaction garantie</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Nous travaillons jusqu'à votre entière satisfaction.</p>
+              </div>
             </div>
-            <div className="text-center space-y-4 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
-              <div className="text-5xl font-black text-primary-500 dark:text-accent-400 group-hover:scale-110 transition-transform">98%</div>
-              <p className="text-slate-600 dark:text-slate-300 font-bold">Taux de satisfaction</p>
-            </div>
-            <div className="text-center space-y-4 p-6 rounded-2xl hover:bg-slate-50 dark:hover:bg-dark-800 transition-all group cursor-default">
-              <div className="text-5xl font-black text-primary-500 dark:text-accent-400 group-hover:scale-110 transition-transform">24/7</div>
-              <p className="text-slate-600 dark:text-slate-300 font-bold">Support réactif</p>
+            <div className="flex items-center space-x-6 p-6 bg-slate-50 dark:bg-dark-800 rounded-2xl">
+              <div className="w-14 h-14 bg-primary-100 dark:bg-primary-500/20 rounded-2xl flex items-center justify-center text-primary-600 dark:text-primary-400 shrink-0">
+                <Headphones className="w-7 h-7" />
+              </div>
+              <div>
+                <h3 className="font-bold text-slate-900 dark:text-white text-lg">Support réactif</h3>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Une équipe dédiée pour vous accompagner.</p>
+              </div>
             </div>
           </div>
         </div>

@@ -195,6 +195,15 @@ const DevSurMesure: React.FC = () => {
               <span className="text-primary-100">Sur Mesure.</span>
             </h1>
 
+            {/* Platform Highlights */}
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <span className="text-white/90 font-bold text-lg">Web</span>
+              <span className="text-white/40">|</span>
+              <span className="text-white/90 font-bold text-lg">Mobile</span>
+              <span className="text-white/40">|</span>
+              <span className="text-white/90 font-bold text-lg">Logiciel</span>
+            </div>
+
             <p className="text-xl text-primary-50 max-w-3xl mx-auto mb-10 leading-relaxed">
               Parce que votre entreprise est unique, vos logiciels doivent l'être aussi.
               Nous créons des solutions <strong className="text-white">taillées pour vos besoins spécifiques</strong>,
