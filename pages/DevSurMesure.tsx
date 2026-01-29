@@ -128,7 +128,7 @@ const DevSurMesure: React.FC = () => {
       </section>
 
       {/* 2. Systèmes de Gestion Sur Mesure */}
-      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">
+      <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-xs font-bold px-4 py-2 rounded-full mb-4 uppercase tracking-widest">
@@ -142,26 +142,58 @@ const DevSurMesure: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: "Gestion de Stock & Logistique", desc: "Suivi temps réel, inventaires tournants, gestion multi-dépôts.", icon: <Database className="w-8 h-8" />, tags: ["Traceabilité", "QR Codes", "Alertes"] },
-              { title: "CRM & Gestion Commerciale", desc: "De la prospection à la facturation. Suivi des opportunités.", icon: <Users className="w-8 h-8" />, tags: ["Pipeline", "Devis", "Factures"] },
-              { title: "Finance & Comptabilité", desc: "Tableaux de bord financiers, suivi des dépenses, intégration bancaire.", icon: <LineChart className="w-8 h-8" />, tags: ["Trésorerie", "Bilan", "Rapprochement"] },
-              { title: "Production (GPAO)", desc: "Ordres de fabrication, nomenclatures, planification et suivi qualité.", icon: <Settings2 className="w-8 h-8" />, tags: ["Planning", "Coûts", "Qualité"] },
-              { title: "Ressources Humaines (SIRH)", desc: "Portail employé, gestion des congés, notes de frais.", icon: <HeartHandshake className="w-8 h-8" />, tags: ["Paie", "Congés", "Onboarding"] },
-              { title: "Reporting & BI", desc: "Centralisation des données et visualisation interactive.", icon: <LayoutDashboard className="w-8 h-8" />, tags: ["KPIs", "Export", "Prévisions"] }
+              { title: "Gestion de Stock & Logistique", desc: "Suivi temps réel, inventaires tournants, gestion multi-dépôts.", icon: <Database className="w-7 h-7" />, tags: ["Traceabilité", "QR Codes", "Alertes"] },
+              { title: "CRM & Gestion Commerciale", desc: "De la prospection à la facturation. Suivi des opportunités.", icon: <Users className="w-7 h-7" />, tags: ["Pipeline", "Devis", "Factures"] },
+              { title: "Finance & Comptabilité", desc: "Tableaux de bord financiers, suivi des dépenses, intégration bancaire.", icon: <LineChart className="w-7 h-7" />, tags: ["Trésorerie", "Bilan", "Rapprochement"] },
+              { title: "Production (GPAO)", desc: "Ordres de fabrication, nomenclatures, planification et suivi qualité.", icon: <Settings2 className="w-7 h-7" />, tags: ["Planning", "Coûts", "Qualité"] },
+              { title: "Ressources Humaines (SIRH)", desc: "Portail employé, gestion des congés, notes de frais.", icon: <HeartHandshake className="w-7 h-7" />, tags: ["Paie", "Congés", "Onboarding"] },
+              { title: "Reporting & BI", desc: "Centralisation des données et visualisation interactive.", icon: <LayoutDashboard className="w-7 h-7" />, tags: ["KPIs", "Export", "Prévisions"] }
             ].map((system, i) => (
-              <div key={i} className="group bg-white dark:bg-dark-700 p-8 rounded-3xl border border-slate-200 dark:border-slate-600 hover:shadow-xl transition-all">
-                <div className="w-16 h-16 bg-primary-50 dark:bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary-500 group-hover:scale-110 transition-all">
-                  <div className="text-primary-500 dark:text-primary-400 group-hover:text-white transition-colors">{system.icon}</div>
+              <div
+                key={i}
+                className="group relative bg-white dark:bg-dark-700 rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-600"
+              >
+                {/* Subtle gradient top bar - brand colors */}
+                <div className="h-1 bg-gradient-to-r from-primary-500 to-accent-500 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+
+                <div className="p-7">
+                  {/* Header with icon and number */}
+                  <div className="flex items-start justify-between mb-5">
+                    <div className="w-14 h-14 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center group-hover:bg-gradient-to-br group-hover:from-primary-500 group-hover:to-accent-500 transition-all duration-300">
+                      <div className="text-primary-500 dark:text-primary-400 group-hover:text-white transition-colors">
+                        {system.icon}
+                      </div>
+                    </div>
+                    <span className="text-5xl font-black text-slate-100 dark:text-slate-700 group-hover:text-primary-100 dark:group-hover:text-slate-500 transition-colors select-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
+                    {system.title}
+                  </h3>
+                  <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">
+                    {system.desc}
+                  </p>
+
+                  {/* Tags - subtle and consistent */}
+                  <div className="flex flex-wrap gap-2">
+                    {system.tags.map((tag, j) => (
+                      <span
+                        key={j}
+                        className="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-600 text-slate-600 dark:text-slate-300 group-hover:bg-primary-50 group-hover:text-primary-600 dark:group-hover:bg-primary-500/20 dark:group-hover:text-primary-300 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{system.title}</h3>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">{system.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {system.tags.map((tag, j) => (
-                    <span key={j} className="text-xs font-medium text-primary-600 dark:text-primary-300 bg-primary-50 dark:bg-primary-500/20 px-3 py-1 rounded-full">{tag}</span>
-                  ))}
-                </div>
+
+                {/* Subtle hover glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500/0 to-accent-500/0 group-hover:from-primary-500/5 group-hover:to-accent-500/5 transition-all duration-300 pointer-events-none"></div>
               </div>
             ))}
           </div>
