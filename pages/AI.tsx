@@ -69,7 +69,7 @@ const AI: React.FC = () => {
                 <div className="flex flex-col space-y-6 relative z-10">
                   <div className="flex items-center justify-between p-4 bg-white dark:bg-dark-700 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600">
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold">CRM</div>
+                      <div className="px-3 py-2 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold text-sm">CRM</div>
                       <div>
                         <div className="text-sm font-bold text-slate-900 dark:text-white">Nouveau Client</div>
                         <div className="text-xs text-slate-500">Source: Site Web</div>
@@ -93,11 +93,11 @@ const AI: React.FC = () => {
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 bg-white dark:bg-dark-700 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600">
-                      <div className="w-8 h-8 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-2">ERP</div>
+                      <div className="px-3 py-2 bg-green-100 text-green-600 rounded-lg flex items-center justify-center font-bold text-sm mb-2">ERP</div>
                       <div className="text-xs font-medium text-slate-900 dark:text-white">Création Devis</div>
                     </div>
                     <div className="p-4 bg-white dark:bg-dark-700 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600">
-                      <div className="w-8 h-8 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-2">Slack</div>
+                      <div className="px-3 py-2 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center font-bold text-sm mb-2">Slack</div>
                       <div className="text-xs font-medium text-slate-900 dark:text-white">Notif Équipe</div>
                     </div>
                   </div>

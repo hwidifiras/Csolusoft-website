@@ -46,90 +46,86 @@ const ElectronicBilling: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 1: Le Contexte */}
+      {/* SECTION: Contexte & Constat - Merged */}
       <section className="py-20 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block bg-primary-50 dark:bg-primary-500/20 text-primary-600 dark:text-primary-300 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              LE CONTEXTE
+              CONTEXTE & CONSTAT
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Pourquoi la facturation électronique ?
+              La facturation électronique en Tunisie
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              Dans le cadre de la modernisation fiscale, la Tunisie impose progressivement la facturation électronique conforme au format <strong>TEIF</strong>.
-            </p>
-            <Link to={Page.BillingGuide} className="inline-flex items-center space-x-2 text-primary-500 dark:text-accent-400 font-semibold mt-4 hover:underline">
+            <Link to={Page.BillingGuide} className="inline-flex items-center space-x-2 text-primary-500 dark:text-accent-400 font-semibold hover:underline">
               <span>En savoir plus sur la réglementation</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600">
-              <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/20 rounded-xl flex items-center justify-center mb-6">
-                <CheckCircle2 className="w-6 h-6 text-primary-500 dark:text-primary-400" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left - Le Contexte */}
+            <div className="bg-white dark:bg-dark-700 p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-600">
+              <div className="w-14 h-14 bg-primary-50 dark:bg-primary-500/20 rounded-2xl flex items-center justify-center mb-6">
+                <CheckCircle2 className="w-7 h-7 text-primary-500 dark:text-primary-400" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Aujourd'hui</h3>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                Les <strong>sociétés de services</strong> sont déjà soumises à l'obligation d'émettre des factures électroniques conformes.
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Pourquoi la facturation électronique ?</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Dans le cadre de la modernisation fiscale, la Tunisie impose progressivement la facturation électronique conforme au format <strong className="text-slate-900 dark:text-white">TEIF</strong>.
               </p>
-            </div>
-            <div className="bg-white dark:bg-dark-700 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-600">
-              <div className="w-12 h-12 bg-slate-100 dark:bg-slate-600 rounded-xl flex items-center justify-center mb-6">
-                <Clock className="w-6 h-6 text-slate-600 dark:text-slate-300" />
+              <div className="space-y-4">
+                <div className="flex items-start space-x-4 p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                  <div className="w-10 h-10 bg-primary-100 dark:bg-primary-500/30 rounded-lg flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-primary-500 dark:text-primary-400" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white">Aujourd'hui</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Les <strong>sociétés de services</strong> sont déjà soumises à l'obligation.</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-4 p-4 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                  <div className="w-10 h-10 bg-slate-200 dark:bg-slate-600 rounded-lg flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 dark:text-white">Prochainement</h4>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">L'obligation sera <strong>étendue à toutes les entreprises</strong>.</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Prochainement</h3>
-              <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                L'obligation sera <strong>étendue à toutes les entreprises</strong>, quel que soit leur secteur d'activité.
-              </p>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* SECTION 2: Le Problème */}
-      <section className="py-20 bg-white dark:bg-dark-900 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 text-sm font-bold px-4 py-2 rounded-full mb-4">
-              LE CONSTAT
-            </span>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Beaucoup d'entreprises ne sont pas prêtes
-            </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              De nombreuses sociétés utilisent encore des méthodes qui ne respectent pas le guide de conformité tunisien.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-8">
-              <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileSpreadsheet className="w-8 h-8 text-slate-500 dark:text-slate-400" />
+            {/* Right - Le Constat */}
+            <div className="bg-white dark:bg-dark-700 p-8 md:p-10 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-600">
+              <div className="w-14 h-14 bg-slate-100 dark:bg-slate-600 rounded-2xl flex items-center justify-center mb-6">
+                <FileSpreadsheet className="w-7 h-7 text-slate-500 dark:text-slate-400" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Fichiers Excel</h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Facturation manuelle sur tableur, sans structure normalisée ni traçabilité.
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Beaucoup d'entreprises ne sont pas prêtes</h3>
+              <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                De nombreuses sociétés utilisent encore des méthodes qui ne respectent pas le guide de conformité tunisien.
               </p>
-            </div>
-            <div className="text-center p-8">
-              <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Package className="w-8 h-8 text-slate-500 dark:text-slate-400" />
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3 p-3 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                  <FileSpreadsheet className="w-5 h-5 text-slate-500 dark:text-slate-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Fichiers Excel</span>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Facturation manuelle sans structure normalisée</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 p-3 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                  <Package className="w-5 h-5 text-slate-500 dark:text-slate-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Anciens ERP</span>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">Logiciels non mis à jour, pas d'export TEIF</p>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 p-3 bg-slate-50 dark:bg-dark-600 rounded-xl">
+                  <FileOutput className="w-5 h-5 text-slate-500 dark:text-slate-400 shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">Formats non conformes</span>
+                    <p className="text-xs text-slate-500 dark:text-slate-400">PDF, CSV ou autres exports non valides</p>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Anciens ERP</h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                Logiciels de gestion non mis à jour, qui n'exportent pas au format TEIF requis.
-              </p>
-            </div>
-            <div className="text-center p-8">
-              <div className="w-16 h-16 bg-slate-100 dark:bg-slate-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <FileOutput className="w-8 h-8 text-slate-500 dark:text-slate-400" />
-              </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Formats non conformes</h3>
-              <p className="text-slate-600 dark:text-slate-400">
-                PDF, CSV ou autres exports qui ne respectent pas les exigences du guide tunisien.
-              </p>
             </div>
           </div>
         </div>

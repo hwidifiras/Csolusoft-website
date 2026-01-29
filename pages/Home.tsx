@@ -163,13 +163,13 @@ const Home: React.FC = () => {
                 tags: ["NLP", "Vision", "Prédiction"]
               }
             ].map((service, idx) => (
-              <div key={idx} className="bg-white dark:bg-dark-900 mx-auto w-full p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-dark-700 group">
-                {service.icon}
+              <div key={idx} className="bg-white dark:bg-dark-900 mx-auto w-full p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 dark:border-dark-700 group flex flex-col items-center text-center">
+                <div className="flex justify-center">{service.icon}</div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-primary-500 transition-colors">{service.title}</h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-4 text-sm leading-relaxed">
                   {service.desc}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap justify-center gap-2">
                   {service.tags.map((tag, i) => (
                     <span key={i} className="px-2 py-1 bg-slate-100 dark:bg-dark-800 text-xs font-medium text-slate-500 dark:text-slate-400 rounded-md">
                       {tag}
@@ -178,6 +178,17 @@ const Home: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Bouton En savoir plus */}
+          <div className="flex justify-center mt-12">
+            <Link
+              to={Page.Dev}
+              className="px-8 py-4 bg-primary-500 text-white rounded-2xl font-bold text-lg hover:bg-primary-600 transition-all shadow-lg shadow-primary-500/30 flex items-center justify-center space-x-2 group"
+            >
+              <span>En savoir plus</span>
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
