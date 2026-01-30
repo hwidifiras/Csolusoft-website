@@ -106,43 +106,64 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         {/* Mobile Menu */}
         <div
           id="mobile-menu"
-          className={`md:hidden bg-white dark:bg-dark-900 border-t border-slate-100 dark:border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          className={`md:hidden fixed left-0 right-0 top-20 bg-white dark:bg-dark-900 border-t border-slate-100 dark:border-white/10 shadow-2xl overflow-hidden transition-all duration-300 ease-in-out z-40 ${isOpen ? 'max-h-[calc(100vh-5rem)] opacity-100' : 'max-h-0 opacity-0'
             }`}
           role="menu"
           aria-label="Menu mobile"
         >
-          <div className="px-4 py-6 space-y-4">
-            {NAV_LINKS.map((link) => (
+          <div className="px-4 py-6 space-y-3 overflow-y-auto max-h-[calc(100vh-8rem)]">
+            {NAV_LINKS.map((link, index) => (
               link.href === Page.Billing ? (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-accent-500 dark:bg-accent-600 text-white py-3 rounded-xl font-bold hover:bg-accent-600 dark:hover:bg-accent-700 transition-colors"
+                  className="block w-full text-center bg-gradient-to-r from-accent-500 to-accent-600 dark:from-accent-600 dark:to-accent-700 text-white py-4 rounded-2xl font-bold hover:shadow-lg hover:scale-[1.02] transition-all relative overflow-hidden group"
                 >
-                  {link.label} - NOUVEAU
+                  <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  <span className="relative flex items-center justify-center space-x-2">
+                    <span>{link.label}</span>
+                    <span className="text-yellow-300 text-lg">✦</span>
+                  </span>
                 </Link>
               ) : (
                 <Link
                   key={link.href}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`block text-lg font-medium transition-colors ${isActive(link.href) ? 'text-primary-600 dark:text-accent-400' : 'text-slate-700 dark:text-slate-200 hover:text-primary-500 dark:hover:text-accent-400'
+                  className={`block py-3 px-4 rounded-xl font-medium transition-all ${isActive(link.href)
+                      ? 'bg-primary-50 dark:bg-primary-500/10 text-primary-600 dark:text-accent-400 border-l-4 border-primary-600 dark:border-accent-400'
+                      : 'text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-white/5 hover:translate-x-1'
                     }`}
                 >
                   {link.label}
                 </Link>
               )
             ))}
+
+            {/* Separator */}
+            <div className="border-t border-slate-200 dark:border-white/10 my-4" />
+
+            {/* Contact CTA */}
             <Link
               to={Page.Contact}
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-primary-500 dark:bg-primary-600 text-white py-3 rounded-xl font-bold hover:bg-primary-600 dark:hover:bg-primary-700 transition-colors"
+              className="block w-full text-center bg-primary-500 dark:bg-primary-600 text-white py-4 rounded-2xl font-bold hover:bg-primary-600 dark:hover:bg-primary-700 hover:shadow-lg hover:scale-[1.02] transition-all flex items-center justify-center space-x-2"
             >
-              Contactez-nous
+              <span>Devis Gratuit</span>
+              <ChevronRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
