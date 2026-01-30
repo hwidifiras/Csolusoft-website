@@ -285,24 +285,6 @@ const Contact: React.FC = () => {
                   ></iframe>
                 </div>
               </div>
-
-              <div className="mt-16 p-8 bg-dark-900 rounded-[2.5rem] text-white">
-                <div className="flex items-center space-x-4 mb-6">
-                  <Calendar className="w-8 h-8 text-primary-300" />
-                  <h4 className="text-2xl font-bold">Un rendez-vous ?</h4>
-                </div>
-                <p className="text-slate-400 mb-8 leading-relaxed">
-                  Planifiez un appel de 15 minutes avec l'un de nos consultants pour une pré-analyse gratuite de votre besoin.
-                </p>
-                <a
-                  href="https://calendly.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-4 bg-white text-slate-900 rounded-xl font-bold hover:bg-primary-50 transition-all text-center"
-                >
-                  Réserver un créneau
-                </a>
-              </div>
             </div>
           </div>
         </div>
