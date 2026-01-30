@@ -173,13 +173,13 @@ const DevSurMesure: React.FC = () => {
                         {system.icon}
                       </div>
                     </div>
-                    <span className="text-5xl font-black text-slate-100 dark:text-slate-700 group-hover:text-primary-100 dark:group-hover:text-slate-500 transition-colors select-none">
+                    <span className="text-5xl font-black text-slate-100 dark:text-slate-700 group-hover:text-primary-100 dark:group-hover:text-primary-300 transition-colors select-none">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-accent-400 transition-colors">
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white dark:group-hover:text-accent-300 transition-colors">
                     {system.title}
                   </h3>
                   <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">
