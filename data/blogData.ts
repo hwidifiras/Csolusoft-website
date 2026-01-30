@@ -14,7 +14,7 @@ export interface BlogPost {
   featured?: boolean;
 }
 
-export type BlogCategory = 
+export type BlogCategory =
   | 'actualites'
   | 'facturation'
   | 'erp'
@@ -94,8 +94,8 @@ Adoptez notre solution native intégrant toutes les exigences légales.
 > **Important** : Ne prenez pas de risque. Contactez-nous pour un devis gratuit et sans engagement.
     `,
     category: 'facturation',
-    author: 'Équipe CSoluSoft',
-    authorRole: 'Experts en conformité fiscale',
+    author: 'Équipe Veille',
+    authorRole: 'Veille réglementaire & conformité',
     publishedAt: '2026-01-20',
     readTime: 8,
     image: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=400&fit=crop',
@@ -167,8 +167,8 @@ Notre équipe vous accompagne dans toutes ces démarches. Notre solution intègr
 **Contactez-nous pour une démonstration gratuite.**
     `,
     category: 'facturation',
-    author: 'Service Technique CSoluSoft',
-    authorRole: 'Département Intégration',
+    author: 'Équipe Dev',
+    authorRole: 'Département Technique',
     publishedAt: '2026-01-18',
     readTime: 6,
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop',
@@ -225,8 +225,8 @@ CSoluSoft propose un ERP modulaire adapté aux PME tunisiennes :
 **Migration en douceur garantie** : nous importons vos données Excel existantes.
     `,
     category: 'erp',
-    author: 'Mohamed Ben Ali',
-    authorRole: 'Consultant ERP Senior',
+    author: 'Houidi Firas',
+    authorRole: 'CEO & Consultant ERP',
     publishedAt: '2026-01-15',
     readTime: 5,
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop',
@@ -296,8 +296,8 @@ Pas besoin de révolutionner toute votre entreprise. Commencez par un cas d'usag
 **Contactez-nous pour une étude de cas personnalisée.**
     `,
     category: 'ia',
-    author: 'Dr. Sami Khelifi',
-    authorRole: 'Directeur Innovation & IA',
+    author: 'Équipe Dev',
+    authorRole: 'Spécialistes IA',
     publishedAt: '2026-01-12',
     readTime: 7,
     image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=400&fit=crop',
@@ -366,7 +366,7 @@ Chez CSoluSoft, nous suivons une approche éprouvée :
 **Parlez-nous de votre projet.**
     `,
     category: 'developpement',
-    author: 'Équipe Développement',
+    author: 'Équipe Dev',
     authorRole: 'Ingénieurs Logiciels',
     publishedAt: '2026-01-10',
     readTime: 6,
@@ -451,8 +451,8 @@ Nous accompagnons les PME tunisiennes dans leur transformation :
 **Prenez rendez-vous pour un diagnostic.**
     `,
     category: 'digital',
-    author: 'Amel Mansour',
-    authorRole: 'Consultante Transformation Digitale',
+    author: 'Houidi Firas',
+    authorRole: 'CEO & Consultant Digital',
     publishedAt: '2026-01-08',
     readTime: 7,
     image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop',
@@ -547,8 +547,8 @@ Nos logiciels intègrent la sécurité dès la conception :
 **Demandez un audit de sécurité gratuit.**
     `,
     category: 'conseils',
-    author: 'Karim Trabelsi',
-    authorRole: 'Responsable Sécurité Informatique',
+    author: 'Équipe Dev',
+    authorRole: 'Experts Sécurité',
     publishedAt: '2026-01-05',
     readTime: 8,
     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop',
@@ -629,8 +629,8 @@ Pour une **transformation durable** : ERP modulaire CSoluSoft
 **Demandez une démonstration comparative.**
     `,
     category: 'facturation',
-    author: 'Équipe Commerciale',
-    authorRole: 'Consultants Avant-Vente',
+    author: 'Équipe Veille',
+    authorRole: 'Analyse & conseil',
     publishedAt: '2026-01-03',
     readTime: 5,
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&h=400&fit=crop',
