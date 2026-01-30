@@ -14,7 +14,7 @@
   --color-primary-700: #033a89;
   --color-primary-800: #022d6f;
   --color-primary-900: #011f55;
-  
+
   /* Accent/Light blue - Based on logo cloud highlight #0aa4e7 */
   --color-accent-50: #e6f7ff;
   --color-accent-100: #b3e6ff;
@@ -26,7 +26,7 @@
   --color-accent-700: #0782b9;
   --color-accent-800: #0571a2;
   --color-accent-900: #04608b;
-  
+
   /* Dark mode background - #111827 */
   --color-dark-50: #f8fafc;
   --color-dark-100: #f1f5f9;
@@ -49,22 +49,27 @@ body {
 }
 
 /* Prevent horizontal scroll on mobile */
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 /* Better touch targets on mobile */
 @media (max-width: 768px) {
-  button, a {
+
+  button,
+  a {
     min-height: 44px;
   }
-  
+
   /* Improve text readability on mobile */
-  p, li, span {
+  p,
+  li,
+  span {
     line-height: 1.6;
   }
-  
+
   /* Reduce padding on mobile for better space usage */
   .px-4 {
     padding-left: 1rem;
@@ -72,16 +77,37 @@ html, body {
   }
 }
 
+/* Ensure all interactive elements have pointer cursor */
+a,
+button,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+select,
+label[for],
+summary,
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Disabled state should show not-allowed cursor */
+button:disabled,
+[disabled],
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
 /* Responsive typography */
 @media (max-width: 640px) {
   h1 {
     font-size: clamp(1.75rem, 8vw, 3rem);
   }
-  
+
   h2 {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
-  
+
   h3 {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
   }
@@ -89,7 +115,10 @@ html, body {
 
 /* Fix for iOS Safari input zoom */
 @media screen and (max-width: 768px) {
-  input, select, textarea {
+
+  input,
+  select,
+  textarea {
     font-size: 16px !important;
   }
 }
@@ -160,12 +189,27 @@ a:focus-visible {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
 }
+
 @keyframes bounce-x {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
 }
 
 .animate-bounce-x {
@@ -174,13 +218,23 @@ a:focus-visible {
 
 /* Marquee animations for tech icons */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-marquee {
