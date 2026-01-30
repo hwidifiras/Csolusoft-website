@@ -206,25 +206,19 @@ const About: React.FC = () => {
       <section className="py-24 bg-dark-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-6">
-            Rejoignez l'aventure CSoluSoft
+            Prêt à transformer votre entreprise ?
           </h2>
           <p className="text-xl text-slate-300 mb-10">
-            Que vous soyez client ou futur collaborateur, nous serions ravis d'échanger avec vous.
+            Discutons de vos besoins et découvrez comment nous pouvons vous accompagner dans votre transformation digitale.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               to={Page.Contact}
               className="px-8 py-4 bg-accent-500 text-white rounded-2xl font-bold hover:bg-accent-600 transition-all flex items-center justify-center space-x-2"
             >
-              <span>Nous contacter</span>
+              <span>Demander un devis gratuit</span>
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <a
-              href="mailto:careers@csolusoft.com"
-              className="px-8 py-4 bg-white/10 text-white rounded-2xl font-bold hover:bg-white/20 transition-all"
-            >
-              Rejoindre l'équipe
-            </a>
           </div>
         </div>
       </section>
