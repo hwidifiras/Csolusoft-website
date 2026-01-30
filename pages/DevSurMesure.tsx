@@ -119,7 +119,14 @@ const DevSurMesure: React.FC = () => {
                 <span>Discuter de mon projet</span>
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <a href="#process" className="px-8 py-4 bg-white/10 backdrop-blur text-white border border-white/30 rounded-2xl font-bold hover:bg-white/20 transition-all">
+              <a
+                href="#process"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="px-8 py-4 bg-white/10 backdrop-blur text-white border border-white/30 rounded-2xl font-bold hover:bg-white/20 transition-all"
+              >
                 Voir le processus
               </a>
             </div>
@@ -135,7 +142,7 @@ const DevSurMesure: React.FC = () => {
               Expertise Métier
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Systèmes de Gestion <span className="text-primary-500 dark:text-accent-400">Sur Mesure.</span>
+              Systèmes de Gestion Standard<span className="text-primary-500 dark:text-accent-400">Sur Mesure.</span>
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
               Nous concevons des outils de gestion puissants, exactement calibrés pour votre métier.

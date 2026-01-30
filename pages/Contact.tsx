@@ -63,24 +63,40 @@ const Contact: React.FC = () => {
 
     setStatus('submitting');
 
-    // Simulate API call - Replace with actual API endpoint (EmailJS, Formspree, etc.)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Formspree endpoint - Remplacez YOUR_FORM_ID par votre ID Formspree
+      // 1. Allez sur https://formspree.io/
+      // 2. Créez un compte gratuit
+      // 3. Créez un nouveau formulaire avec l'email: contact@csolusoft.com
+      // 4. Copiez votre Form ID et remplacez ci-dessous
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          company: formData.company,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Pour répondre directement au client
+          _subject: `Nouveau contact: ${formData.subject}` // Sujet de l'email
+        })
+      });
 
-      // Here you would typically send to your backend or service like:
-      // await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
+      if (response.ok) {
+        console.log('Form submitted successfully:', formData);
+        setStatus('success');
+        setFormData({ name: '', company: '', email: '', subject: 'Facturation Électronique', message: '' });
 
-      console.log('Form submitted:', formData);
-      setStatus('success');
-      setFormData({ name: '', company: '', email: '', subject: 'Facturation Électronique', message: '' });
-
-      // Reset success message after 5 seconds
-      setTimeout(() => setStatus('idle'), 5000);
-    } catch {
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        throw new Error('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }

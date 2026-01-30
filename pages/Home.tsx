@@ -55,7 +55,7 @@ const Home: React.FC = () => {
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link to={Page.Billing} className="px-8 py-4 bg-accent-500 text-white rounded-xl font-bold text-lg hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/30 flex items-center justify-center space-x-2">
+                <Link to={`${Page.Billing}#solutions`} className="px-8 py-4 bg-accent-500 text-white rounded-xl font-bold text-lg hover:bg-accent-600 transition-all shadow-lg shadow-accent-500/30 flex items-center justify-center space-x-2">
                   <span>Découvrir nos offres</span>
                   <ArrowRight className="w-5 h-5" />
                 </Link>
