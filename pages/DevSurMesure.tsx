@@ -299,11 +299,6 @@ const DevSurMesure: React.FC = () => {
                   </div>
                 ))}
               </div>
-
-              <Link to={Page.Contact} className="inline-flex items-center space-x-2 bg-gradient-to-r from-accent-500 to-primary-500 text-white px-8 py-4 rounded-2xl font-bold hover:shadow-lg transition-all">
-                <span>Bénéficier de cet accompagnement</span>
-                <ArrowRight className="w-5 h-5" />
-              </Link>
             </div>
 
             <div className="relative">
