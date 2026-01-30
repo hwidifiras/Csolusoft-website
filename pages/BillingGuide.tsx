@@ -394,26 +394,26 @@ const BillingGuide: React.FC = () => {
       </section>
 
       {/* Penalties Section */}
-      <section className="py-20 bg-red-50 dark:bg-red-950/30 transition-colors">
+      <section className="py-20 bg-slate-50 dark:bg-dark-800 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 dark:bg-red-500/20 rounded-2xl mb-6">
-              <AlertTriangle className="w-8 h-8 text-red-600 dark:text-red-400" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 dark:bg-amber-500/20 rounded-2xl mb-6">
+              <AlertTriangle className="w-8 h-8 text-amber-600 dark:text-amber-400" />
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6">
-              Risques en cas de non-conformité
+              Points d'attention réglementaires
             </h2>
             <p className="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              Le non-respect de l'obligation de facturation électronique expose votre entreprise à des sanctions financières significatives.
+              Pour assurer la conformité de votre entreprise, voici les aspects réglementaires à connaître concernant la facturation électronique.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {penalties.map((penalty, idx) => (
-              <div key={idx} className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-red-100 dark:border-red-500/20 shadow-sm">
+              <div key={idx} className="bg-white dark:bg-dark-700 p-6 rounded-2xl border border-slate-200 dark:border-slate-600 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center space-x-2 mb-4">
-                  <FileWarning className="w-5 h-5 text-red-500 dark:text-red-400" />
-                  <span className="text-base font-bold text-red-600 dark:text-red-400">{penalty.amount}</span>
+                  <FileWarning className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+                  <span className="text-base font-bold text-slate-900 dark:text-white">{penalty.amount}</span>
                 </div>
                 <p className="text-slate-600 dark:text-slate-400 text-sm">{penalty.description}</p>
               </div>
@@ -422,11 +422,11 @@ const BillingGuide: React.FC = () => {
 
           <div className="text-center mt-12">
             <p className="text-slate-700 dark:text-slate-300 font-medium mb-6">
-              Ne prenez pas de risques. Mettez-vous en conformité dès maintenant.
+              Nous vous accompagnons pour une mise en conformité sereine et efficace.
             </p>
             <Link
               to={Page.Billing}
-              className="inline-flex items-center space-x-2 bg-red-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-red-700 transition-all"
+              className="inline-flex items-center space-x-2 bg-primary-500 text-white px-8 py-4 rounded-xl font-bold hover:bg-primary-600 transition-all shadow-lg"
             >
               <Shield className="w-5 h-5" />
               <span>Découvrir nos solutions</span>
