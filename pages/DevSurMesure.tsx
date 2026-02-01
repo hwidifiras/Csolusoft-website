@@ -154,7 +154,6 @@ const DevSurMesure: React.FC = () => {
               { title: "Gestion de Stock & Logistique", desc: "Suivi temps réel, inventaires tournants, gestion multi-dépôts.", icon: <Database className="w-7 h-7" />, tags: ["Traceabilité", "QR Codes", "Alertes"] },
               { title: "CRM & Gestion Commerciale", desc: "De la prospection à la facturation. Suivi des opportunités.", icon: <Users className="w-7 h-7" />, tags: ["Pipeline", "Devis", "Factures"] },
               { title: "Finance & Comptabilité", desc: "Tableaux de bord financiers, suivi des dépenses, intégration bancaire.", icon: <LineChart className="w-7 h-7" />, tags: ["Trésorerie", "Bilan", "Rapprochement"] },
-              { title: "Production (GPAO)", desc: "Ordres de fabrication, nomenclatures, planification et suivi qualité.", icon: <Settings2 className="w-7 h-7" />, tags: ["Planning", "Coûts", "Qualité"] },
               { title: "Ressources Humaines (SIRH)", desc: "Portail employé, gestion des congés, notes de frais.", icon: <HeartHandshake className="w-7 h-7" />, tags: ["Paie", "Congés", "Onboarding"] },
               { title: "Reporting & BI", desc: "Centralisation des données et visualisation interactive.", icon: <LayoutDashboard className="w-7 h-7" />, tags: ["KPIs", "Export", "Prévisions"] }
             ].map((system, i) => (
