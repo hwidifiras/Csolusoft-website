@@ -121,22 +121,23 @@ const Contact: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Form */}
-            <div className="bg-white dark:bg-dark-800 p-10 md:p-12 rounded-[3rem] shadow-xl shadow-slate-200 dark:shadow-black/20">
-              {status === 'success' && (
-                <div className="mb-6 p-4 bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 rounded-xl flex items-center space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
-                  <span className="text-green-700 dark:text-green-300 font-medium">Message envoyé avec succès ! Nous vous répondrons sous 24h.</span>
-                </div>
-              )}
+            <div className="space-y-8">
+              <div className="bg-white dark:bg-dark-800 p-10 md:p-12 rounded-[3rem] shadow-xl shadow-slate-200 dark:shadow-black/20">
+                {status === 'success' && (
+                  <div className="mb-6 p-4 bg-green-50 dark:bg-green-500/20 border border-green-200 dark:border-green-500/30 rounded-xl flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                    <span className="text-green-700 dark:text-green-300 font-medium">Message envoyé avec succès ! Nous vous répondrons sous 24h.</span>
+                  </div>
+                )}
 
-              {status === 'error' && (
-                <div className="mb-6 p-4 bg-red-50 dark:bg-red-500/20 border border-red-200 dark:border-red-500/30 rounded-xl flex items-center space-x-3">
-                  <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
-                  <span className="text-red-700 dark:text-red-300 font-medium">Une erreur est survenue. Veuillez réessayer.</span>
-                </div>
-              )}
+                {status === 'error' && (
+                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-500/20 border border-red-200 dark:border-red-500/30 rounded-xl flex items-center space-x-3">
+                    <AlertCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                    <span className="text-red-700 dark:text-red-300 font-medium">Une erreur est survenue. Veuillez réessayer.</span>
+                  </div>
+                )}
 
-              <form className="space-y-6" onSubmit={handleSubmit}>
+                <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-bold text-slate-700 dark:text-slate-200">Nom complet *</label>
@@ -223,10 +224,31 @@ const Contact: React.FC = () => {
                     </>
                   )}
                 </button>
-              </form>
+                </form>
+              </div>
+
+              <div className="bg-white dark:bg-dark-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Calendar className="w-5 h-5 text-primary-500 dark:text-accent-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-white">Réserver un rendez-vous</h4>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm mt-1">Choisissez un créneau qui vous convient pour échanger sur votre projet.</p>
+                  </div>
+                </div>
+                <a
+                  href="https://cal.csolusoft.com/firashouidi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-primary-500 dark:bg-primary-600 px-4 py-3 font-bold text-white transition-all hover:bg-primary-600 dark:hover:bg-primary-700"
+                >
+                  Planifier maintenant
+                </a>
+              </div>
             </div>
 
-            {/* Info & Booking */}
+            {/* Info */}
             <div className="flex flex-col justify-between">
               <div className="space-y-12">
                 <div className="flex items-start space-x-6">
@@ -270,26 +292,6 @@ const Contact: React.FC = () => {
                     <h4 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">Bureaux</h4>
                     <p className="text-slate-600 dark:text-slate-300">Route Mahdia Km 3, Imm Amal<br />Sfax, Tunisie</p>
                   </div>
-                </div>
-
-                <div className="bg-white dark:bg-dark-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 rounded-xl flex items-center justify-center shrink-0">
-                      <Calendar className="w-5 h-5 text-primary-500 dark:text-accent-400" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white">Réserver un rendez-vous</h4>
-                      <p className="text-slate-600 dark:text-slate-300 text-sm mt-1">Choisissez un créneau qui vous convient pour échanger sur votre projet.</p>
-                    </div>
-                  </div>
-                  <a
-                    href="https://cal.csolusoft.com/firashouidi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-primary-500 dark:bg-primary-600 px-4 py-3 font-bold text-white transition-all hover:bg-primary-600 dark:hover:bg-primary-700"
-                  >
-                    Planifier maintenant
-                  </a>
                 </div>
 
                 {/* Carte OpenStreetMap */}
