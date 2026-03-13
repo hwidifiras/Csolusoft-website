@@ -272,6 +272,26 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
+                <div className="bg-white dark:bg-dark-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-primary-50 dark:bg-primary-500/10 rounded-xl flex items-center justify-center shrink-0">
+                      <Calendar className="w-5 h-5 text-primary-500 dark:text-accent-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white">Réserver un rendez-vous</h4>
+                      <p className="text-slate-600 dark:text-slate-300 text-sm mt-1">Choisissez un créneau qui vous convient pour échanger sur votre projet.</p>
+                    </div>
+                  </div>
+                  <a
+                    href="https://cal.csolusoft.com/firashouidi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-primary-500 dark:bg-primary-600 px-4 py-3 font-bold text-white transition-all hover:bg-primary-600 dark:hover:bg-primary-700"
+                  >
+                    Planifier maintenant
+                  </a>
+                </div>
+
                 {/* Carte OpenStreetMap */}
                 <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-sm">
                   <iframe
