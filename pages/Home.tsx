@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle, BarChart3, Globe, Laptop, Smartphone, Monitor, BrainCircuit, MessageCircle, Cloud, Factory, ShoppingCart, HeartPulse, Landmark, Briefcase, ThumbsUp, Headphones } from 'lucide-react';
 import { Page } from '../types';
 import SEO from '../components/SEO';
-import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {
   return (
@@ -408,8 +407,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <Testimonials />
 
       {/* CTA Final */}
       <section className="py-24 bg-white dark:bg-dark-800 transition-colors">
