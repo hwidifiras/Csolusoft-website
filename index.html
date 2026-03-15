@@ -12,6 +12,7 @@
     <meta name="geo.region" content="TN">
     <meta name="geo.placename" content="Sfax, Tunisie">
     <link rel="canonical" href="https://csolusoft.com">
+    <meta property="og:image" content="https://csolusoft.com/img/solusoft-logo-hero-light.svg">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
@@ -32,7 +33,46 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="preload" href="/index.css" as="style">
+        <link rel="preload" href="/img/solusoft-logo-navbar-light.svg" as="image" type="image/svg+xml">
+        <link rel="preload" href="/img/solusoft-logo-hero-light.svg" as="image" type="image/svg+xml">
+
+        <!-- Organization Schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "CSoluSoft",
+                "url": "https://csolusoft.com",
+                "logo": "https://csolusoft.com/img/solusoft-logo-hero-light.svg",
+                "description": "Entreprise tunisienne de développement logiciel spécialisée en facturation électronique, ERP, développement sur mesure et IA.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Route Mahdia Km 3, Imm Amal",
+                    "addressLocality": "Sfax",
+                    "addressCountry": "TN"
+                },
+                "contactPoint": [
+                    {
+                        "@type": "ContactPoint",
+                        "contactType": "customer support",
+                        "email": "contact@csolusoft.com",
+                        "telephone": "+21628118244",
+                        "availableLanguage": ["fr", "ar"]
+                    }
+                ],
+                "sameAs": [
+                    "https://wa.me/21658874825",
+                    "https://cal.csolusoft.com/firashouidi"
+                ]
+            }
+        </script>
+
+        <!-- Google Analytics 4 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script type="module" src="/src/analytics.js"></script>
 </head>
 <body class="bg-slate-50 dark:bg-dark-900 text-slate-900 dark:text-white selection:bg-blue-100 selection:text-blue-700 dark:selection:bg-primary-500/30 dark:selection:text-primary-200 overflow-x-hidden transition-colors">
     <div id="root"></div>

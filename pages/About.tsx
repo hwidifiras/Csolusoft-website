@@ -21,10 +21,11 @@ const About: React.FC = () => {
   return (
     <div className="bg-white dark:bg-dark-900 transition-colors">
       <SEO
-        title="À Propos"
-        description="Découvrez CSoluSoft, votre partenaire en transformation digitale basé à Sfax, Tunisie. Une équipe de développeurs expérimentés et innovants."
+        title="À propos de CSoluSoft"
+        description="Découvrez CSoluSoft à Sfax: une équipe tunisienne experte en transformation digitale, développement sur mesure, cloud, automatisation et intelligence artificielle."
         keywords="CSoluSoft, à propos, entreprise, Sfax, Tunisie, transformation digitale, équipe, développeurs"
-        url="/a-propos"
+        url="/about"
+        image="/img/solusoft-logo-footer-dark.svg"
       />
 
       {/* Hero */}

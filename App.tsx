@@ -13,6 +13,7 @@ const ERP = lazy(() => import('./pages/ERP'));
 const DevSurMesure = lazy(() => import('./pages/DevSurMesure'));
 const AI = lazy(() => import('./pages/AI'));
 const Services = lazy(() => import('./pages/Services'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const ElectronicBilling = lazy(() => import('./pages/ElectronicBilling'));
 const BillingGuide = lazy(() => import('./pages/BillingGuide'));
 const Blog = lazy(() => import('./pages/Blog'));
@@ -53,11 +54,13 @@ const AppContent: React.FC = () => {
             <Route path={Page.Dev} element={<DevSurMesure />} />
             <Route path={Page.AI} element={<AI />} />
             <Route path={Page.Services} element={<Services />} />
+            <Route path={Page.CaseStudies} element={<CaseStudies />} />
             <Route path={Page.Billing} element={<ElectronicBilling />} />
             <Route path={Page.BillingGuide} element={<BillingGuide />} />
             <Route path={Page.Blog} element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path={Page.About} element={<About />} />
+            <Route path="/about" element={<About />} />
             <Route path={Page.Contact} element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

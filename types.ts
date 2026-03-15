@@ -21,6 +21,7 @@ export enum Page {
   Dev = '/developpement',
   AI = '/intelligence-artificielle',
   Services = '/services',
+  CaseStudies = '/case-studies',
   Billing = '/facturation-electronique',
   BillingGuide = '/guide-facturation-electronique',
   Blog = '/blog',

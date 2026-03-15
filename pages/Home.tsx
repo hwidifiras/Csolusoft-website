@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Zap, Cpu, AlertTriangle, BarChart3, Globe, Laptop, Smartphone, Monitor, BrainCircuit, MessageCircle, Cloud, Factory, ShoppingCart, HeartPulse, Landmark, Briefcase, ThumbsUp, Headphones } from 'lucide-react';
 import { Page } from '../types';
 import SEO from '../components/SEO';
+import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {
   return (
     <div className="overflow-hidden bg-white dark:bg-dark-900 transition-colors">
       <SEO
-        title="Accueil"
-        description="CSoluSoft - Expert en solutions logicielles sur mesure en Tunisie. Facturation électronique, ERP, développement web/mobile et intelligence artificielle pour propulser votre entreprise."
+        title="Solutions logicielles en Tunisie"
+        description="CSoluSoft accompagne les entreprises tunisiennes avec des solutions logicielles sur mesure: facturation électronique, ERP, développement web/mobile et IA."
         keywords="CSoluSoft, facturation électronique Tunisie, ERP Tunisie, logiciel de gestion, développement sur mesure, intelligence artificielle, transformation digitale"
         url="/"
+        image="/img/solusoft-logo-hero-light.svg"
       />
       {/* HERO: Facturation Électronique - Compact & Impactful */}
       <section className="relative pt-28 pb-20 bg-gradient-to-br from-dark-900 via-dark-800 to-primary-900 overflow-hidden">
@@ -406,6 +408,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* CTA Final */}
       <section className="py-24 bg-white dark:bg-dark-800 transition-colors">

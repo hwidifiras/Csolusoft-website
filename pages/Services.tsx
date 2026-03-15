@@ -24,10 +24,11 @@ const Services: React.FC = () => {
   return (
     <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors">
       <SEO 
-        title="Nos Services"
-        description="Découvrez nos services de transformation digitale : applications web, mobiles, logiciels desktop, cloud et APIs. Expertise technique et support 24/7."
+        title="Services digitaux sur mesure"
+        description="Découvrez les services CSoluSoft: développement web, applications mobiles, logiciels desktop, cloud et APIs pour accélérer votre transformation digitale."
         keywords="services informatiques, développement web, application mobile, logiciel desktop, cloud, API, Tunisie"
         url="/services"
+        image="/img/solusoft-logo-navbar-light.svg"
       />
       {/* Hero */}
       <section className="py-24 bg-slate-50 dark:bg-dark-800 transition-colors">

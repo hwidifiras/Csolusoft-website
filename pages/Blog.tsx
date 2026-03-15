@@ -52,10 +52,11 @@ const Blog: React.FC = () => {
   return (
     <div className="bg-white dark:bg-dark-900 min-h-screen transition-colors">
       <SEO 
-        title="Blog & Actualités"
-        description="Restez informé sur la transformation digitale, facturation électronique, ERP et intelligence artificielle. Conseils et actualités pour les entreprises tunisiennes."
+        title="Blog transformation digitale"
+        description="Le blog CSoluSoft partage des conseils pratiques sur la facturation électronique, l'ERP, l'IA et la digitalisation des entreprises en Tunisie."
         keywords="blog CSoluSoft, actualités, facturation électronique, ERP, IA, transformation digitale, Tunisie"
         url="/blog"
+        image="/img/solusoft-logo-hero-dark.svg"
       />
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 bg-gradient-to-br from-dark-900 via-primary-800 to-primary-900 overflow-hidden">

@@ -22,6 +22,7 @@ export const NAV_LINKS: NavLink[] = [
   // { label: 'Solutions ERP', href: Page.ERP },
   { label: 'Sur Mesure', href: Page.Dev },
   { label: 'IA', href: Page.AI },
+  { label: 'Cas Clients', href: Page.CaseStudies },
   { label: 'À Propos', href: Page.About },
   { label: 'Contact', href: Page.Contact },
 ];
